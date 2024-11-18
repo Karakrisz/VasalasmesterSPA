@@ -1,0 +1,1 @@
+{"version":3,"file":"kapcsolat-VFM9w9RU.js","sources":["../../../../pages/kapcsolat.vue"],"sourcesContent":["<script setup>\nuseHead({\n  title: 'Kapcsolat',\n})\n</script>\n\n<template>\n  <div class=\"subpage-content subpage-footer-content\"></div>\n</template>\n"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;AACA,YAAQ;AAAA,MACN,OAAO;AAAA,IACT,CAAC;;;;;;;;;;;;"}

@@ -1,0 +1,48 @@
+<svg width="572" height="349" viewBox="0 0 572 349" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5">
+<g clip-path="url(#clip0_58_76)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M228 44.5408C203.383 44.5408 183.498 24.5597 183.498 0C183.498 24.5597 163.535 44.5408 138.997 44.5408C163.535 44.5408 183.498 64.4429 183.498 89.0026C183.498 64.4429 203.383 44.5408 228 44.5408Z" fill="white"/>
+</g>
+<g clip-path="url(#clip1_58_76)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M528 232.52C516.106 232.52 506.499 222.866 506.499 211C506.499 222.866 496.854 232.52 484.999 232.52C496.854 232.52 506.499 242.135 506.499 254.001C506.499 242.135 516.106 232.52 528 232.52Z" fill="white"/>
+</g>
+<g clip-path="url(#clip2_58_76)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M255 81.5151C245.872 81.5151 238.499 74.1064 238.499 65C238.499 74.1064 231.097 81.5151 221.999 81.5151C231.097 81.5151 238.499 88.8946 238.499 98.001C238.499 88.8946 245.872 81.5151 255 81.5151Z" fill="white"/>
+</g>
+<g clip-path="url(#clip3_58_76)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M572 284.528C555.128 284.528 541.499 270.833 541.499 254C541.499 270.833 527.816 284.528 510.998 284.528C527.816 284.528 541.499 298.169 541.499 315.002C541.499 298.169 555.128 284.528 572 284.528Z" fill="white"/>
+</g>
+<g clip-path="url(#clip4_58_76)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M60.9999 322.524C46.3404 322.524 34.4991 310.625 34.4991 296C34.4991 310.625 22.6108 322.524 7.99829 322.524C22.6108 322.524 34.4991 334.376 34.4991 349.002C34.4991 334.376 46.3404 322.524 60.9999 322.524Z" fill="white"/>
+</g>
+<g clip-path="url(#clip5_58_76)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M66.9998 165.531C48.468 165.531 33.4988 150.489 33.4988 132C33.4988 150.489 18.4702 165.531 -0.00219727 165.531C18.4702 165.531 33.4988 180.513 33.4988 199.002C33.4988 180.513 48.468 165.531 66.9998 165.531Z" fill="white"/>
+</g>
+<g clip-path="url(#clip6_58_76)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M459 107.514C450.425 107.514 443.499 100.555 443.499 92C443.499 100.555 436.546 107.514 427.999 107.514C436.546 107.514 443.499 114.446 443.499 123.001C443.499 114.446 450.425 107.514 459 107.514Z" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_58_76">
+<rect width="89" height="89" fill="white" transform="translate(139)"/>
+</clipPath>
+<clipPath id="clip1_58_76">
+<rect width="43" height="43" fill="white" transform="translate(485 211)"/>
+</clipPath>
+<clipPath id="clip2_58_76">
+<rect width="33" height="33" fill="white" transform="translate(222 65)"/>
+</clipPath>
+<clipPath id="clip3_58_76">
+<rect width="61" height="61" fill="white" transform="translate(511 254)"/>
+</clipPath>
+<clipPath id="clip4_58_76">
+<rect width="53" height="53" fill="white" transform="translate(8 296)"/>
+</clipPath>
+<clipPath id="clip5_58_76">
+<rect width="67" height="67" fill="white" transform="translate(0 132)"/>
+</clipPath>
+<clipPath id="clip6_58_76">
+<rect width="31" height="31" fill="white" transform="translate(428 92)"/>
+</clipPath>
+</defs>
+</svg>
