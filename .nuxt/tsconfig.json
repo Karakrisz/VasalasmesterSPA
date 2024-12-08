@@ -2,6 +2,9 @@
 {
   "compilerOptions": {
     "paths": {
+      "nitropack/types": [
+        "../node_modules/nitropack/types"
+      ],
       "nitropack": [
         "../node_modules/nitropack"
       ],
@@ -59,6 +62,9 @@
       "@@/*": [
         "../*"
       ],
+      "#shared": [
+        "../shared"
+      ],
       "assets": [
         "../assets"
       ],
@@ -70,6 +76,12 @@
       ],
       "public/*": [
         "../public/*"
+      ],
+      "#build": [
+        "."
+      ],
+      "#build/*": [
+        "./*"
       ],
       "#app": [
         "../node_modules/nuxt/dist/app"
@@ -87,7 +99,10 @@
         "../node_modules/@nuxt/image/dist/runtime/*"
       ],
       "#sitemap": [
-        "../node_modules/@nuxtjs/sitemap/dist/runtime/types"
+        "../node_modules/@nuxtjs/sitemap/dist/runtime"
+      ],
+      "#sitemap/*": [
+        "../node_modules/@nuxtjs/sitemap/dist/runtime/*"
       ],
       "#vue-router": [
         "../node_modules/vue-router"
@@ -96,13 +111,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev"
-      ],
-      "#build": [
-        "."
-      ],
-      "#build/*": [
-        "./*"
+        "./manifest/meta/dev.json"
       ],
       "#components": [
         "./components"
@@ -120,7 +129,7 @@
     "noUncheckedIndexedAccess": false,
     "forceConsistentCasingInFileNames": true,
     "noImplicitOverride": true,
-    "module": "ESNext",
+    "module": "preserve",
     "noEmit": true,
     "lib": [
       "ESNext",

@@ -1,1 +1,0 @@
-import{k as o}from"./BFo7Gwhv.js";import{u as e}from"./CXQwRXy5.js";async function r(){const s=o(),{data:t}=await e("posts",()=>$fetch(`${s.public.apiBaseUrl}/json-posts`));return t}function i(s,t){const n=s.replace(/<[^>]*>/g,"");return n.length<=t?n:n.slice(0,t)+"..."}export{r as f,i as t};

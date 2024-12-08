@@ -1,34 +1,30 @@
-import { hasInjectionContext, inject, version, ref, watchEffect, watch, getCurrentInstance, defineComponent, useAttrs, computed, mergeProps, unref, useSSRContext, provide, shallowReactive, h, Suspense, nextTick, Fragment, Transition, resolveComponent, createApp, effectScope, reactive, getCurrentScope, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, toRef, defineAsyncComponent, shallowRef, isReadonly, isRef, isShallow, isReactive, toRaw, withCtx, openBlock, createBlock, createTextVNode, toDisplayString } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue/index.mjs';
-import { $fetch } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ofetch/dist/node.mjs';
-import { b as baseURL } from '../_/renderer.mjs';
-import { createHooks } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/hookable/dist/index.mjs';
-import { getContext } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unctx/dist/index.mjs';
-import { createError as createError$1, appendHeader, sanitizeStatusCode } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/h3/dist/index.mjs';
-import { CapoPlugin, getActiveHead } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unhead/dist/index.mjs';
-import { defineHeadPlugin, composableNames } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/@unhead/shared/dist/index.mjs';
-import { RouterView, createMemoryHistory, createRouter, START_LOCATION, useRoute as useRoute$1 } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue-router/dist/vue-router.node.mjs';
-import { toRouteMatcher, createRouter as createRouter$1 } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/radix3/dist/index.mjs';
-import { defu } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/defu/dist/defu.mjs';
-import { parseQuery, encodeParam, hasProtocol, joinURL, withLeadingSlash, parseURL, isScriptProtocol, withQuery, withTrailingSlash, withoutTrailingSlash, encodePath } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ufo/dist/index.mjs';
-import { ssrRenderAttrs, ssrRenderSuspense, ssrRenderComponent, ssrRenderVNode, ssrRenderClass, ssrRenderList, ssrInterpolate, ssrRenderAttr } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue/server-renderer/index.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/devalue/index.js';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/@unhead/ssr/dist/index.mjs';
-import '../runtime.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/destr/dist/index.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unenv/runtime/fetch/index.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/klona/dist/index.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/scule/dist/index.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ohash/dist/index.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/dist/index.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/drivers/fs.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/drivers/fs-lite.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unstorage/drivers/lru-cache.mjs';
+import { hasInjectionContext, inject, version, ref, watchEffect, watch, getCurrentInstance, defineComponent, useAttrs, computed, mergeProps, unref, useSSRContext, provide, shallowReactive, h, Suspense, nextTick, Fragment, Transition, resolveComponent, createApp, effectScope, reactive, getCurrentScope, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, toRef, defineAsyncComponent, shallowRef, isReadonly, isRef, isShallow, isReactive, toRaw, withCtx, openBlock, createBlock, createTextVNode, toDisplayString } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue/index.mjs';
+import { $fetch } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ofetch/dist/node.mjs';
+import { m as baseURL } from '../nitro/nitro.mjs';
+import { createHooks } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/hookable/dist/index.mjs';
+import { getContext } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unctx/dist/index.mjs';
+import { createError as createError$1, appendHeader, sanitizeStatusCode } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/h3/dist/index.mjs';
+import { CapoPlugin, getActiveHead } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unhead/dist/index.mjs';
+import { defineHeadPlugin, composableNames } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/@unhead/shared/dist/index.mjs';
+import { RouterView, createMemoryHistory, createRouter, START_LOCATION, useRoute as useRoute$1 } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue-router/dist/vue-router.node.mjs';
+import { toRouteMatcher, createRouter as createRouter$1 } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/radix3/dist/index.mjs';
+import { defu } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/defu/dist/defu.mjs';
+import { parseQuery, encodeParam, hasProtocol, joinURL, withLeadingSlash, parseURL, isScriptProtocol, withQuery, withTrailingSlash, withoutTrailingSlash, encodePath } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ufo/dist/index.mjs';
+import { ssrRenderAttrs, ssrRenderSuspense, ssrRenderComponent, ssrRenderVNode, ssrRenderClass, ssrRenderList, ssrInterpolate, ssrRenderAttr } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue/server-renderer/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/destr/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unenv/runtime/fetch/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/klona/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/scule/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/drivers/fs.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/drivers/fs-lite.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/drivers/lru-cache.mjs';
 import 'node:fs';
 import 'node:url';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/pathe/dist/index.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unenv/runtime/npm/consola.mjs';
-import 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ipx/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/pathe/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unenv/runtime/npm/consola.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ipx/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ohash/dist/index.mjs';
 
 if (!globalThis.$fetch) {
   globalThis.$fetch = $fetch.create({
@@ -56,7 +52,7 @@ function createNuxtApp(options) {
     globalName: "nuxt",
     versions: {
       get nuxt() {
-        return "3.13.2";
+        return "3.14.1592";
       },
       get vue() {
         return nuxtApp.vueApp.version;
@@ -276,6 +272,7 @@ const isProcessingMiddleware = () => {
   }
   return false;
 };
+const URL_QUOTE_RE = /"/g;
 const navigateTo = (to, options) => {
   if (!to) {
     to = "/";
@@ -301,7 +298,7 @@ const navigateTo = (to, options) => {
       const location2 = isExternal ? toPath : joinURL((/* @__PURE__ */ useRuntimeConfig()).app.baseURL, fullPath);
       const redirect = async function(response) {
         await nuxtApp.callHook("app:redirected");
-        const encodedLoc = location2.replace(/"/g, "%22");
+        const encodedLoc = location2.replace(URL_QUOTE_RE, "%22");
         const encodedHeader = encodeURL(location2, isExternalHost);
         nuxtApp.ssrContext._renderResponse = {
           statusCode: sanitizeStatusCode((options == null ? void 0 : options.redirectCode) || 302, 302),
@@ -583,8 +580,11 @@ function executeAsync(function_) {
   }
   return [awaitable, restore];
 }
+const ROUTE_KEY_PARENTHESES_RE$1 = /(:\w+)\([^)]+\)/g;
+const ROUTE_KEY_SYMBOLS_RE$1 = /(:\w+)[?+*]/g;
+const ROUTE_KEY_NORMAL_RE$1 = /:\w+/g;
 const interpolatePath = (route, match) => {
-  return match.path.replace(/(:\w+)\([^)]+\)/g, "$1").replace(/(:\w+)[?+*]/g, "$1").replace(/:\w+/g, (r) => {
+  return match.path.replace(ROUTE_KEY_PARENTHESES_RE$1, "$1").replace(ROUTE_KEY_SYMBOLS_RE$1, "$1").replace(ROUTE_KEY_NORMAL_RE$1, (r) => {
     var _a;
     return ((_a = route.params[r.slice(1)]) == null ? void 0 : _a.toString()) || "";
   });
@@ -605,12 +605,13 @@ function toArray$1(value) {
 }
 async function getRouteRules(url) {
   {
-    const _routeRulesMatcher = toRouteMatcher(
+    const _routeRulesMatcher2 = toRouteMatcher(
       createRouter$1({ routes: (/* @__PURE__ */ useRuntimeConfig()).nitro.routeRules })
     );
-    return defu({}, ..._routeRulesMatcher.matchAll(url).reverse());
+    return defu({}, ..._routeRulesMatcher2.matchAll(url).reverse());
   }
 }
+const component_45stub3wuRNIbi1N = {};
 const _routes = [
   {
     name: "adatvedelmi-tajekoztato",
@@ -630,7 +631,7 @@ const _routes = [
   {
     name: "egyeni-igenyek",
     path: "/egyeni-igenyek",
-    component: () => import('./egyeni-igenyek-B9OLHQYX.mjs')
+    component: () => import('./egyeni-igenyek-C49oy5Ss.mjs')
   },
   {
     name: "galeria",
@@ -640,12 +641,12 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-Dcu9fWjL.mjs')
+    component: () => import('./index-B3SL9ntC.mjs')
   },
   {
     name: "javitas",
     path: "/javitas",
-    component: () => import('./javitas-Bg-kmolT.mjs')
+    component: () => import('./javitas-CKWZRjiu.mjs')
   },
   {
     name: "kapcsolat",
@@ -655,27 +656,27 @@ const _routes = [
   {
     name: "kolcsonzes",
     path: "/kolcsonzes",
-    component: () => import('./kolcsonzes-iYiNuw31.mjs')
+    component: () => import('./kolcsonzes-DvE5QP3X.mjs')
   },
   {
     name: "meretre-szabas-igazitas",
     path: "/meretre-szabas-igazitas",
-    component: () => import('./meretre-szabas-igazitas-CcOrUTCr.mjs')
+    component: () => import('./meretre-szabas-igazitas-CadmGf8C.mjs')
   },
   {
     name: "mosas",
     path: "/mosas",
-    component: () => import('./mosas-Bk244Vb6.mjs')
+    component: () => import('./mosas-BkdoFTsQ.mjs')
   },
   {
     name: "nagy-mennyiseg",
     path: "/nagy-mennyiseg",
-    component: () => import('./nagy-mennyiseg-Cy2P_Zzd.mjs')
+    component: () => import('./nagy-mennyiseg-he-zw-VD.mjs')
   },
   {
     name: "posts-slug",
     path: "/posts/:slug()",
-    component: () => import('./_slug_-BozIf19g.mjs')
+    component: () => import('./_slug_-DNAAvG5-.mjs')
   },
   {
     name: "posts",
@@ -695,17 +696,32 @@ const _routes = [
   {
     name: "tisztitas",
     path: "/tisztitas",
-    component: () => import('./tisztitas-jqiyJ3WU.mjs')
+    component: () => import('./tisztitas-DC_KxLDD.mjs')
   },
   {
     name: "varras",
     path: "/varras",
-    component: () => import('./varras-Dl_aLdsc.mjs')
+    component: () => import('./varras-DYS9ZsFE.mjs')
   },
   {
     name: "vasalas",
     path: "/vasalas",
-    component: () => import('./vasalas-dxKmAw0o.mjs')
+    component: () => import('./vasalas-Di_NB1OU.mjs')
+  },
+  {
+    name: void 0 ,
+    path: "/sitemap.xml",
+    component: component_45stub3wuRNIbi1N
+  },
+  {
+    name: void 0 ,
+    path: "/pages-sitemap.xml",
+    component: component_45stub3wuRNIbi1N
+  },
+  {
+    name: void 0 ,
+    path: "/posts-sitemap.xml",
+    component: component_45stub3wuRNIbi1N
   }
 ];
 const _wrapIf = (component, props, slots) => {
@@ -715,8 +731,11 @@ const _wrapIf = (component, props, slots) => {
     return props ? h(component, props, slots) : (_a = slots.default) == null ? void 0 : _a.call(slots);
   } };
 };
+const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
+const ROUTE_KEY_SYMBOLS_RE = /(:\w+)[?+*]/g;
+const ROUTE_KEY_NORMAL_RE = /:\w+/g;
 function generateRouteKey(route) {
-  const source = (route == null ? void 0 : route.meta.key) ?? route.path.replace(/(:\w+)\([^)]+\)/g, "$1").replace(/(:\w+)[?+*]/g, "$1").replace(/:\w+/g, (r) => {
+  const source = (route == null ? void 0 : route.meta.key) ?? route.path.replace(ROUTE_KEY_PARENTHESES_RE, "$1").replace(ROUTE_KEY_SYMBOLS_RE, "$1").replace(ROUTE_KEY_NORMAL_RE, (r) => {
     var _a;
     return ((_a = route.params[r.slice(1)]) == null ? void 0 : _a.toString()) || "";
   });
@@ -906,16 +925,7 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
         if ((failure == null ? void 0 : failure.type) === 4) {
           return;
         }
-        if (to.matched.length === 0) {
-          await nuxtApp.runWithContext(() => showError(createError$1({
-            statusCode: 404,
-            fatal: false,
-            statusMessage: `Page not found: ${to.fullPath}`,
-            data: {
-              path: to.fullPath
-            }
-          })));
-        } else if (to.redirectedFrom && to.fullPath !== initialURL) {
+        if (to.redirectedFrom && to.fullPath !== initialURL) {
           await nuxtApp.runWithContext(() => navigateTo(to.fullPath || "/"));
         }
       });
@@ -997,6 +1007,18 @@ const plugin = /* @__PURE__ */ defineNuxtPlugin({
     router.onError(async () => {
       delete nuxtApp._processingMiddleware;
       await nuxtApp.callHook("page:loading:end");
+    });
+    router.afterEach(async (to, _from) => {
+      if (to.matched.length === 0) {
+        await nuxtApp.runWithContext(() => showError(createError$1({
+          statusCode: 404,
+          fatal: false,
+          statusMessage: `Page not found: ${to.fullPath}`,
+          data: {
+            path: to.fullPath
+          }
+        })));
+      }
     });
     nuxtApp.hooks.hookOnce("app:created", async () => {
       try {
@@ -1251,8 +1273,9 @@ function defineNuxtLink(options) {
         }
         prefetched.value = true;
         const path = typeof to.value === "string" ? to.value : isExternal.value ? resolveRouteObject(to.value) : router.resolve(to.value).fullPath;
+        const normalizedPath = isExternal.value ? new URL(path, (void 0).location.href).href : path;
         await Promise.all([
-          nuxtApp.hooks.callHook("link:prefetch", path).catch(() => {
+          nuxtApp.hooks.callHook("link:prefetch", normalizedPath).catch(() => {
           }),
           !isExternal.value && !hasTarget.value && preloadRouteComponents(to.value, router).catch(() => {
           })
@@ -1395,6 +1418,7 @@ const components_plugin_KR1HBZs4kY = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:global-components"
 });
 let routes;
+let _routeRulesMatcher = void 0;
 const prerender_server_LXx1wM9sKF = /* @__PURE__ */ defineNuxtPlugin(async () => {
   let __temp, __restore;
   if (routerOptions.hashMode) {
@@ -1403,6 +1427,7 @@ const prerender_server_LXx1wM9sKF = /* @__PURE__ */ defineNuxtPlugin(async () =>
   if (routes && !routes.length) {
     return;
   }
+  (/* @__PURE__ */ useRuntimeConfig()).nitro.routeRules;
   routes || (routes = Array.from(processRoutes(([__temp, __restore] = executeAsync(() => {
     var _a;
     return (_a = routerOptions.routes) == null ? void 0 : _a.call(routerOptions, _routes);
@@ -1411,17 +1436,22 @@ const prerender_server_LXx1wM9sKF = /* @__PURE__ */ defineNuxtPlugin(async () =>
   prerenderRoutes(batch);
 });
 const OPTIONAL_PARAM_RE = /^\/?:.*(?:\?|\(\.\*\)\*)$/;
+function shouldPrerender(path) {
+  return !_routeRulesMatcher;
+}
 function processRoutes(routes2, currentPath = "/", routesToPrerender = /* @__PURE__ */ new Set()) {
   var _a;
   for (const route of routes2) {
-    if (OPTIONAL_PARAM_RE.test(route.path) && !((_a = route.children) == null ? void 0 : _a.length)) {
+    if (OPTIONAL_PARAM_RE.test(route.path) && !((_a = route.children) == null ? void 0 : _a.length) && shouldPrerender()) {
       routesToPrerender.add(currentPath);
     }
     if (route.path.includes(":")) {
       continue;
     }
     const fullPath = joinURL(currentPath, route.path);
-    routesToPrerender.add(fullPath);
+    {
+      routesToPrerender.add(fullPath);
+    }
     if (route.children) {
       processRoutes(route.children, fullPath, routesToPrerender);
     }
@@ -1449,7 +1479,7 @@ async function imageMeta(_ctx, url) {
 }
 async function _imageMeta(url) {
   {
-    const imageMeta2 = await import('file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/image-meta/dist/index.mjs').then((r) => r.imageMeta);
+    const imageMeta2 = await import('file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/image-meta/dist/index.mjs').then((r) => r.imageMeta);
     const data = await fetch(url).then((res) => res.buffer());
     const metadata = imageMeta2(data);
     if (!metadata) {
@@ -1791,7 +1821,7 @@ const getImage = (src, { modifiers = {}, baseURL: baseURL2 } = {}, ctx) => {
 };
 const validateDomains = true;
 const supportsAlias = true;
-const ipxStaticRuntime$u3AOtGUOEU = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+const ipxStaticRuntime$3uRcPGY571 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   getImage,
   supportsAlias,
@@ -1820,7 +1850,7 @@ const imageOptions = {
   ]
 };
 imageOptions.providers = {
-  ["ipxStatic"]: { provider: ipxStaticRuntime$u3AOtGUOEU, defaults: {} }
+  ["ipxStatic"]: { provider: ipxStaticRuntime$3uRcPGY571, defaults: {} }
 };
 const useImage = () => {
   const config = /* @__PURE__ */ useRuntimeConfig();

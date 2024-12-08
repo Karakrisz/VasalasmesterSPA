@@ -131,7 +131,7 @@ useHead({
         to="/ajanlatkeres"
         class="blog-slug-content__linkBox__link text-color-w f-700"
       >
-        IGEN, kérem a szolgáltatást!
+        IGEN, én is ezt akarom!
       </NuxtLink>
     </div>
   </div>

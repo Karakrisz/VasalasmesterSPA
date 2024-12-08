@@ -493,7 +493,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
           to="/ajanlatkeres"
           class="blog-slug-content__linkBox__link text-color-w f-700"
         >
-          IGEN, kérem a tisztaságot!
+          IGEN, Nekem is erre van szükségem!
         </NuxtLink>
       </div>
     </div>

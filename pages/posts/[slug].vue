@@ -19,10 +19,22 @@ const { data: post, error } = await useAsyncData<Post>('post', () =>
 )
 
 if (post?.value) {
- // console.log('Meta description értéke:', post.value.meta_description) 
+  const baseUrl = config.public.apiBaseUrl.replace(/\/$/, '') 
+  const postPath = route.path.replace(/^\//, '') 
+
+  const metaTags = [
+    { name: 'description', content: post.value.meta_description || '' },
+    { property: 'og:title', content: `${post.value.title} - Vasalás Mester` },
+    { property: 'og:description', content: post.value.meta_description || '' },
+    { property: 'og:image', content: `${baseUrl}/storage/${post.value.image}` },
+    { property: 'og:url', content: `https://vasalasmester.hu/${postPath}` }, 
+  ]
+
+//  console.log('Meta Tags:', metaTags)
+
   useHead({
-    title: `${post.value.title} - Vasalás Mester`, 
-    meta: [{ name: 'description', content: post.value.meta_description || '' }],
+    title: `${post.value.title} - Vasalás Mester`,
+    meta: metaTags,
   })
 }
 </script>

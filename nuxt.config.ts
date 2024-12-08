@@ -12,7 +12,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Vasalás Mester - Ingek mosása és vasalása Budapesten',
+      title: 'Vasalás Mester - Ingek mosása és vasalása, ruhatisztítás Budapesten',
       htmlAttrs: {
         lang: 'hu',
       },
@@ -23,7 +23,7 @@ export default defineNuxtConfig({
           hid: 'description',
           name: 'description',
           content:
-            'Ingek mosása és vasalása Budapesten magánszemélyek részére. Gyors, megbízható és professzionális szolgáltatás a VasalásMester csapatától. Bízza ránk az ingjeit!',
+            'Ingek mosása és vasalása, ruhatisztítás Budapesten magánszemélyek részére. Gyors, megbízható és professzionális szolgáltatás a VasalásMester csapatától. Bízza ránk az ingjeit!',
         },
         { name: 'format-detection', content: 'telephone=no' },
         { hid: 'robots', name: 'robots', content: 'index, follow' },
@@ -47,6 +47,19 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet',
+        },
+      ],
+      script: [
+        {
+          hid: 'clarity',
+          type: 'text/javascript',
+          children: `
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "p3kdgo8i0c");
+          `,
         },
       ],
     },
@@ -80,28 +93,35 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-09-12',
 
-  // sitemap: {
-  //   sitemaps: {
-  //     pages: {
-  //       includeAppSources: true, 
-  //       defaults: { priority: 1.0 }, 
-  //     },
-  //     posts: {
-  //       sources: ['/api/sitemap'],
-  //       defaults: { priority: 0.7 }, 
-  //     },
-  //   },
-  // },
-
   sitemap: {
-    sources: ['/api/sitemap'],
-    // defaults: { priority: 0.7 }, 
+    sitemaps: {
+      pages: {
+        includeAppSources: true,
+        defaults: {
+          priority: 0.7,
+          changefreq: 'monthly',
+        },
+      },
+      posts: {
+        sources: ['/api/sitemap'],
+        defaults: {
+          priority: 0.9, 
+          changefreq: 'daily', 
+        },
+      },
+    },
   },
 
-  nitro: {
-    prerender: {
-      routes: ['/sitemap.xml']
-    }
-  }
+  
+  // sitemap: {
+  //   sources: ['/api/sitemap'],
+  //   // defaults: { priority: 0.7 }, 
+  // },
+
+  // nitro: {
+  //   prerender: {
+  //     routes: ['/sitemap.xml']
+  //   }
+  // }
 
 })

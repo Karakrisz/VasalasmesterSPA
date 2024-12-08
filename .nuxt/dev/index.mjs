@@ -1,588 +1,36 @@
-import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { Server } from 'node:http';
+import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { getRequestHeader, splitCookiesString, setResponseStatus, setResponseHeader, send, getRequestHeaders, defineEventHandler, handleCacheHeaders, createEvent, fetchWithEvent, isEvent, eventHandler, getResponseStatus, setResponseHeaders, setHeaders, sendRedirect, proxyRequest, createError, getRequestHost, getRequestProtocol, setHeader, getHeader, getQuery as getQuery$1, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, readBody, getResponseStatusText } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/h3/dist/index.mjs';
+import { Server } from 'node:http';
+import { mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, fetchWithEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, getRequestHost, getRequestProtocol, createError, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, setHeader, getHeader, getQuery as getQuery$1, lazyEventHandler, useBase, createApp, createRouter as createRouter$1, toNodeListener, getRouterParam, readBody, getResponseStatusText } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/h3/dist/index.mjs';
 import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { stringify, uneval } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/devalue/index.js';
 import destr from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/destr/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withTrailingSlash, hasProtocol, withHttps, withoutProtocol, withLeadingSlash, withoutTrailingSlash, withBase, joinRelativeURL, parsePath, parseQuery, stringifyQuery, encodePath, stringifyParsedURL } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ufo/dist/index.mjs';
+import { withQuery, joinURL, withTrailingSlash, parseURL, withoutBase, getQuery, joinRelativeURL, hasProtocol, withHttps, withoutProtocol, withLeadingSlash, withoutTrailingSlash, withBase, parsePath, parseQuery, stringifyQuery, encodePath, stringifyParsedURL, withoutLeadingSlash } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ufo/dist/index.mjs';
 import { renderToString } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue/server-renderer/index.mjs';
 import { propsToString, renderSSRHead } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/@unhead/ssr/dist/index.mjs';
+import { createServerHead as createServerHead$1, CapoPlugin } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unhead/dist/index.mjs';
+import { isVNode, toValue, version, unref } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue/index.mjs';
+import { defineHeadPlugin } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/@unhead/shared/dist/index.mjs';
+import defu, { defuFn, defu as defu$1, createDefu } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/defu/dist/defu.mjs';
+import { toRouteMatcher, createRouter } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/radix3/dist/index.mjs';
+import { consola, createConsola } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/consola/dist/index.mjs';
+import { createHooks } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/hookable/dist/index.mjs';
 import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ofetch/dist/node.mjs';
 import { createCall, createFetch } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/hookable/dist/index.mjs';
 import { klona } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/klona/dist/index.mjs';
 import { snakeCase } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/scule/dist/index.mjs';
-import defu, { defuFn, defu as defu$1, createDefu } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/defu/dist/defu.mjs';
-import { hash } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ohash/dist/index.mjs';
 import { createStorage, prefixStorage } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/dist/index.mjs';
 import unstorage_47drivers_47fs from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/drivers/fs.mjs';
-import { toRouteMatcher, createRouter } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/radix3/dist/index.mjs';
-import { AsyncLocalStorage } from 'node:async_hooks';
-import { consola, createConsola } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/consola/dist/index.mjs';
 import { getContext } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unctx/dist/index.mjs';
+import { AsyncLocalStorage } from 'node:async_hooks';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/errx/dist/index.js';
-import { isVNode, toValue, version, unref } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue/index.mjs';
 import devalue from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/@nuxt/devalue/dist/devalue.mjs';
 import { fileURLToPath } from 'node:url';
 import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ipx/dist/index.mjs';
 import { isAbsolute } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/pathe/dist/index.mjs';
-import { createServerHead as createServerHead$1, CapoPlugin } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unhead/dist/index.mjs';
-import { defineHeadPlugin } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/@unhead/shared/dist/index.mjs';
-
-const r=Object.create(null),E=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),s=new Proxy(r,{get(e,o){return E()[o]??r[o]},has(e,o){const i=E();return o in i||o in r},set(e,o,i){const g=E(!0);return g[o]=i,!0},deleteProperty(e,o){if(!o)return !1;const i=E(!0);return delete i[o],!0},ownKeys(){const e=E(!0);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",p=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:!0}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:!0}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:!1}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:!1}],["VERCEL","VERCEL_ENV",{ci:!1}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:!1}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:!0}],["RAILWAY","RAILWAY_PROJECT_ID"],["RAILWAY","RAILWAY_SERVICE_ID"]];function B(){if(globalThis.process?.env)for(const e of p){const o=e[1]||e[0];if(globalThis.process?.env[o])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:!1}:{name:"",ci:!1}}const l=B(),d=l.name;function n(e){return e?e!=="false":!1}const I=globalThis.process?.platform||"",T=n(s.CI)||l.ci!==!1,R=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(s.DEBUG);const C=t==="test"||n(s.TEST);n(s.MINIMAL)||T||C||!R;const a=/^win/i.test(I);!n(s.NO_COLOR)&&(n(s.FORCE_COLOR)||(R||a)&&s.TERM!=="dumb"||T);const _=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(_?.split(".")[0])||null;const W=globalThis.process||Object.create(null),c={versions:{}};new Proxy(W,{get(e,o){if(o==="env")return s;if(o in e)return e[o];if(o in c)return c[o]}});const A=globalThis.process?.release?.name==="node",L=!!globalThis.Bun||!!globalThis.process?.versions?.bun,D=!!globalThis.Deno,O=!!globalThis.fastly,S=!!globalThis.Netlify,N=!!globalThis.EdgeRuntime,u=globalThis.navigator?.userAgent==="Cloudflare-Workers",b=!!globalThis.__lagon__,F=[[S,"netlify"],[N,"edge-light"],[u,"workerd"],[O,"fastly"],[D,"deno"],[L,"bun"],[A,"node"],[b,"lagon"]];function G(){const e=F.find(o=>o[0]);if(e)return {name:e[1]}}const P=G();P?.name||"";
-
-function getEnv(key, opts) {
-  const envKey = snakeCase(key).toUpperCase();
-  return destr(
-    process.env[opts.prefix + envKey] ?? process.env[opts.altPrefix + envKey]
-  );
-}
-function _isObject(input) {
-  return typeof input === "object" && !Array.isArray(input);
-}
-function applyEnv(obj, opts, parentKey = "") {
-  for (const key in obj) {
-    const subKey = parentKey ? `${parentKey}_${key}` : key;
-    const envValue = getEnv(subKey, opts);
-    if (_isObject(obj[key])) {
-      if (_isObject(envValue)) {
-        obj[key] = { ...obj[key], ...envValue };
-        applyEnv(obj[key], opts, subKey);
-      } else if (envValue === void 0) {
-        applyEnv(obj[key], opts, subKey);
-      } else {
-        obj[key] = envValue ?? obj[key];
-      }
-    } else {
-      obj[key] = envValue ?? obj[key];
-    }
-    if (opts.envExpansion && typeof obj[key] === "string") {
-      obj[key] = _expandFromEnv(obj[key]);
-    }
-  }
-  return obj;
-}
-const envExpandRx = /{{(.*?)}}/g;
-function _expandFromEnv(value) {
-  return value.replace(envExpandRx, (match, key) => {
-    return process.env[key] || match;
-  });
-}
-
-const inlineAppConfig = {
-  "nuxt": {}
-};
-
-
-
-const appConfig = defuFn(inlineAppConfig);
-
-const _inlineRuntimeConfig = {
-  "app": {
-    "baseURL": "/",
-    "buildId": "dev",
-    "buildAssetsDir": "/_nuxt/",
-    "cdnURL": ""
-  },
-  "nitro": {
-    "envPrefix": "NUXT_",
-    "routeRules": {
-      "/__nuxt_error": {
-        "cache": false
-      },
-      "/sitemap.xsl": {
-        "headers": {
-          "Content-Type": "application/xslt+xml"
-        }
-      },
-      "/sitemap.xml": {
-        "headers": {
-          "Content-Type": "text/xml; charset=UTF-8",
-          "Cache-Control": "public, max-age=600, must-revalidate",
-          "X-Sitemap-Prerendered": "2024-11-18T12:41:44.084Z"
-        }
-      },
-      "/_nuxt/builds/meta/**": {
-        "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
-        }
-      },
-      "/_nuxt/builds/**": {
-        "headers": {
-          "cache-control": "public, max-age=1, immutable"
-        }
-      }
-    }
-  },
-  "public": {
-    "apiBaseUrl": "https://vasalasmester.hu/api/public"
-  },
-  "sitemap": {
-    "isI18nMapped": false,
-    "sitemapName": "sitemap.xml",
-    "isMultiSitemap": false,
-    "excludeAppSources": [],
-    "cacheMaxAgeSeconds": 0,
-    "autoLastmod": false,
-    "defaultSitemapsChunkSize": 1000,
-    "minify": false,
-    "sortEntries": true,
-    "debug": false,
-    "discoverImages": true,
-    "discoverVideos": true,
-    "sitemapsPathPrefix": "/__sitemap__/",
-    "isNuxtContentDocumentDriven": false,
-    "xsl": "/__sitemap__/style.xsl",
-    "xslTips": true,
-    "xslColumns": [
-      {
-        "label": "URL",
-        "width": "50%"
-      },
-      {
-        "label": "Images",
-        "width": "25%",
-        "select": "count(image:image)"
-      },
-      {
-        "label": "Last Updated",
-        "width": "25%",
-        "select": "concat(substring(sitemap:lastmod,0,11),concat(' ', substring(sitemap:lastmod,12,5)),concat(' ', substring(sitemap:lastmod,20,6)))"
-      }
-    ],
-    "credits": true,
-    "version": "6.1.3",
-    "sitemaps": {
-      "sitemap.xml": {
-        "sitemapName": "sitemap.xml",
-        "route": "sitemap.xml",
-        "defaults": {},
-        "include": [],
-        "exclude": [
-          "/_nuxt/**",
-          "/_**"
-        ],
-        "includeAppSources": true
-      }
-    }
-  },
-  "nuxt-site-config": {
-    "stack": [
-      {
-        "_context": "system",
-        "_priority": -15,
-        "name": "VasalasmesterSPA",
-        "env": "development"
-      },
-      {
-        "_context": "package.json",
-        "_priority": -10,
-        "name": "nuxt-app"
-      },
-      {
-        "_priority": -3,
-        "_context": "nuxt-site-config:config",
-        "url": "https://www.vasalasmester.hu",
-        "trailingSlash": true
-      }
-    ],
-    "version": "2.2.18",
-    "debug": false
-  },
-  "ipx": {
-    "baseURL": "/_ipx",
-    "alias": {},
-    "fs": {
-      "dir": [
-        "/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/public"
-      ]
-    },
-    "http": {
-      "domains": []
-    }
-  }
-};
-const envOptions = {
-  prefix: "NITRO_",
-  altPrefix: _inlineRuntimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_",
-  envExpansion: _inlineRuntimeConfig.nitro.envExpansion ?? process.env.NITRO_ENV_EXPANSION ?? false
-};
-const _sharedRuntimeConfig = _deepFreeze(
-  applyEnv(klona(_inlineRuntimeConfig), envOptions)
-);
-function useRuntimeConfig(event) {
-  if (!event) {
-    return _sharedRuntimeConfig;
-  }
-  if (event.context.nitro.runtimeConfig) {
-    return event.context.nitro.runtimeConfig;
-  }
-  const runtimeConfig = klona(_inlineRuntimeConfig);
-  applyEnv(runtimeConfig, envOptions);
-  event.context.nitro.runtimeConfig = runtimeConfig;
-  return runtimeConfig;
-}
-const _sharedAppConfig = _deepFreeze(klona(appConfig));
-function useAppConfig(event) {
-  if (!event) {
-    return _sharedAppConfig;
-  }
-  if (event.context.nitro.appConfig) {
-    return event.context.nitro.appConfig;
-  }
-  const appConfig$1 = klona(appConfig);
-  event.context.nitro.appConfig = appConfig$1;
-  return appConfig$1;
-}
-function _deepFreeze(object) {
-  const propNames = Object.getOwnPropertyNames(object);
-  for (const name of propNames) {
-    const value = object[name];
-    if (value && typeof value === "object") {
-      _deepFreeze(value);
-    }
-  }
-  return Object.freeze(object);
-}
-new Proxy(/* @__PURE__ */ Object.create(null), {
-  get: (_, prop) => {
-    console.warn(
-      "Please use `useRuntimeConfig()` instead of accessing config directly."
-    );
-    const runtimeConfig = useRuntimeConfig();
-    if (prop in runtimeConfig) {
-      return runtimeConfig[prop];
-    }
-    return void 0;
-  }
-});
-
-const serverAssets = [{"baseName":"server","dir":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/server/assets"}];
-
-const assets = createStorage();
-
-for (const asset of serverAssets) {
-  assets.mount(asset.baseName, unstorage_47drivers_47fs({ base: asset.dir }));
-}
-
-const storage = createStorage({});
-
-storage.mount('/assets', assets);
-
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
-
-function useStorage(base = "") {
-  return base ? prefixStorage(storage, base) : storage;
-}
-
-const defaultCacheOptions = {
-  name: "_",
-  base: "/cache",
-  swr: true,
-  maxAge: 1
-};
-function defineCachedFunction(fn, opts = {}) {
-  opts = { ...defaultCacheOptions, ...opts };
-  const pending = {};
-  const group = opts.group || "nitro/functions";
-  const name = opts.name || fn.name || "_";
-  const integrity = opts.integrity || hash([fn, opts]);
-  const validate = opts.validate || ((entry) => entry.value !== void 0);
-  async function get(key, resolver, shouldInvalidateCache, event) {
-    const cacheKey = [opts.base, group, name, key + ".json"].filter(Boolean).join(":").replace(/:\/$/, ":index");
-    let entry = await useStorage().getItem(cacheKey) || {};
-    if (typeof entry !== "object") {
-      entry = {};
-      const error = new Error("Malformed data read from cache.");
-      console.error("[nitro] [cache]", error);
-      useNitroApp().captureError(error, { event, tags: ["cache"] });
-    }
-    const ttl = (opts.maxAge ?? opts.maxAge ?? 0) * 1e3;
-    if (ttl) {
-      entry.expires = Date.now() + ttl;
-    }
-    const expired = shouldInvalidateCache || entry.integrity !== integrity || ttl && Date.now() - (entry.mtime || 0) > ttl || validate(entry) === false;
-    const _resolve = async () => {
-      const isPending = pending[key];
-      if (!isPending) {
-        if (entry.value !== void 0 && (opts.staleMaxAge || 0) >= 0 && opts.swr === false) {
-          entry.value = void 0;
-          entry.integrity = void 0;
-          entry.mtime = void 0;
-          entry.expires = void 0;
-        }
-        pending[key] = Promise.resolve(resolver());
-      }
-      try {
-        entry.value = await pending[key];
-      } catch (error) {
-        if (!isPending) {
-          delete pending[key];
-        }
-        throw error;
-      }
-      if (!isPending) {
-        entry.mtime = Date.now();
-        entry.integrity = integrity;
-        delete pending[key];
-        if (validate(entry) !== false) {
-          const promise = useStorage().setItem(cacheKey, entry).catch((error) => {
-            console.error(`[nitro] [cache] Cache write error.`, error);
-            useNitroApp().captureError(error, { event, tags: ["cache"] });
-          });
-          if (event && event.waitUntil) {
-            event.waitUntil(promise);
-          }
-        }
-      }
-    };
-    const _resolvePromise = expired ? _resolve() : Promise.resolve();
-    if (entry.value === void 0) {
-      await _resolvePromise;
-    } else if (expired && event && event.waitUntil) {
-      event.waitUntil(_resolvePromise);
-    }
-    if (opts.swr && validate(entry) !== false) {
-      _resolvePromise.catch((error) => {
-        console.error(`[nitro] [cache] SWR handler error.`, error);
-        useNitroApp().captureError(error, { event, tags: ["cache"] });
-      });
-      return entry;
-    }
-    return _resolvePromise.then(() => entry);
-  }
-  return async (...args) => {
-    const shouldBypassCache = await opts.shouldBypassCache?.(...args);
-    if (shouldBypassCache) {
-      return fn(...args);
-    }
-    const key = await (opts.getKey || getKey)(...args);
-    const shouldInvalidateCache = await opts.shouldInvalidateCache?.(...args);
-    const entry = await get(
-      key,
-      () => fn(...args),
-      shouldInvalidateCache,
-      args[0] && isEvent(args[0]) ? args[0] : void 0
-    );
-    let value = entry.value;
-    if (opts.transform) {
-      value = await opts.transform(entry, ...args) || value;
-    }
-    return value;
-  };
-}
-const cachedFunction = defineCachedFunction;
-function getKey(...args) {
-  return args.length > 0 ? hash(args, {}) : "";
-}
-function escapeKey(key) {
-  return String(key).replace(/\W/g, "");
-}
-function defineCachedEventHandler(handler, opts = defaultCacheOptions) {
-  const variableHeaderNames = (opts.varies || []).filter(Boolean).map((h) => h.toLowerCase()).sort();
-  const _opts = {
-    ...opts,
-    getKey: async (event) => {
-      const customKey = await opts.getKey?.(event);
-      if (customKey) {
-        return escapeKey(customKey);
-      }
-      const _path = event.node.req.originalUrl || event.node.req.url || event.path;
-      const _pathname = escapeKey(decodeURI(parseURL(_path).pathname)).slice(0, 16) || "index";
-      const _hashedPath = `${_pathname}.${hash(_path)}`;
-      const _headers = variableHeaderNames.map((header) => [header, event.node.req.headers[header]]).map(([name, value]) => `${escapeKey(name)}.${hash(value)}`);
-      return [_hashedPath, ..._headers].join(":");
-    },
-    validate: (entry) => {
-      if (!entry.value) {
-        return false;
-      }
-      if (entry.value.code >= 400) {
-        return false;
-      }
-      if (entry.value.body === void 0) {
-        return false;
-      }
-      if (entry.value.headers.etag === "undefined" || entry.value.headers["last-modified"] === "undefined") {
-        return false;
-      }
-      return true;
-    },
-    group: opts.group || "nitro/handlers",
-    integrity: opts.integrity || hash([handler, opts])
-  };
-  const _cachedHandler = cachedFunction(
-    async (incomingEvent) => {
-      const variableHeaders = {};
-      for (const header of variableHeaderNames) {
-        variableHeaders[header] = incomingEvent.node.req.headers[header];
-      }
-      const reqProxy = cloneWithProxy(incomingEvent.node.req, {
-        headers: variableHeaders
-      });
-      const resHeaders = {};
-      let _resSendBody;
-      const resProxy = cloneWithProxy(incomingEvent.node.res, {
-        statusCode: 200,
-        writableEnded: false,
-        writableFinished: false,
-        headersSent: false,
-        closed: false,
-        getHeader(name) {
-          return resHeaders[name];
-        },
-        setHeader(name, value) {
-          resHeaders[name] = value;
-          return this;
-        },
-        getHeaderNames() {
-          return Object.keys(resHeaders);
-        },
-        hasHeader(name) {
-          return name in resHeaders;
-        },
-        removeHeader(name) {
-          delete resHeaders[name];
-        },
-        getHeaders() {
-          return resHeaders;
-        },
-        end(chunk, arg2, arg3) {
-          if (typeof chunk === "string") {
-            _resSendBody = chunk;
-          }
-          if (typeof arg2 === "function") {
-            arg2();
-          }
-          if (typeof arg3 === "function") {
-            arg3();
-          }
-          return this;
-        },
-        write(chunk, arg2, arg3) {
-          if (typeof chunk === "string") {
-            _resSendBody = chunk;
-          }
-          if (typeof arg2 === "function") {
-            arg2();
-          }
-          if (typeof arg3 === "function") {
-            arg3();
-          }
-          return this;
-        },
-        writeHead(statusCode, headers2) {
-          this.statusCode = statusCode;
-          if (headers2) {
-            for (const header in headers2) {
-              this.setHeader(header, headers2[header]);
-            }
-          }
-          return this;
-        }
-      });
-      const event = createEvent(reqProxy, resProxy);
-      event.fetch = (url, fetchOptions) => fetchWithEvent(event, url, fetchOptions, {
-        fetch: useNitroApp().localFetch
-      });
-      event.$fetch = (url, fetchOptions) => fetchWithEvent(event, url, fetchOptions, {
-        fetch: globalThis.$fetch
-      });
-      event.context = incomingEvent.context;
-      event.context.cache = {
-        options: _opts
-      };
-      const body = await handler(event) || _resSendBody;
-      const headers = event.node.res.getHeaders();
-      headers.etag = String(
-        headers.Etag || headers.etag || `W/"${hash(body)}"`
-      );
-      headers["last-modified"] = String(
-        headers["Last-Modified"] || headers["last-modified"] || (/* @__PURE__ */ new Date()).toUTCString()
-      );
-      const cacheControl = [];
-      if (opts.swr) {
-        if (opts.maxAge) {
-          cacheControl.push(`s-maxage=${opts.maxAge}`);
-        }
-        if (opts.staleMaxAge) {
-          cacheControl.push(`stale-while-revalidate=${opts.staleMaxAge}`);
-        } else {
-          cacheControl.push("stale-while-revalidate");
-        }
-      } else if (opts.maxAge) {
-        cacheControl.push(`max-age=${opts.maxAge}`);
-      }
-      if (cacheControl.length > 0) {
-        headers["cache-control"] = cacheControl.join(", ");
-      }
-      const cacheEntry = {
-        code: event.node.res.statusCode,
-        headers,
-        body
-      };
-      return cacheEntry;
-    },
-    _opts
-  );
-  return defineEventHandler(async (event) => {
-    if (opts.headersOnly) {
-      if (handleCacheHeaders(event, { maxAge: opts.maxAge })) {
-        return;
-      }
-      return handler(event);
-    }
-    const response = await _cachedHandler(event);
-    if (event.node.res.headersSent || event.node.res.writableEnded) {
-      return response.body;
-    }
-    if (handleCacheHeaders(event, {
-      modifiedTime: new Date(response.headers["last-modified"]),
-      etag: response.headers.etag,
-      maxAge: opts.maxAge
-    })) {
-      return;
-    }
-    event.node.res.statusCode = response.code;
-    for (const name in response.headers) {
-      const value = response.headers[name];
-      if (name === "set-cookie") {
-        event.node.res.appendHeader(
-          name,
-          splitCookiesString(value)
-        );
-      } else {
-        event.node.res.setHeader(name, value);
-      }
-    }
-    return response.body;
-  });
-}
-function cloneWithProxy(obj, overrides) {
-  return new Proxy(obj, {
-    get(target, property, receiver) {
-      if (property in overrides) {
-        return overrides[property];
-      }
-      return Reflect.get(target, property, receiver);
-    },
-    set(target, property, value, receiver) {
-      if (property in overrides) {
-        overrides[property] = value;
-        return true;
-      }
-      return Reflect.set(target, property, value, receiver);
-    }
-  });
-}
-const cachedEventHandler = defineCachedEventHandler;
+import { hash } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ohash/dist/index.mjs';
 
 function hasReqHeader(event, name, includes) {
   const value = getRequestHeader(event, name);
@@ -594,9 +42,9 @@ function isJsonRequest(event) {
   }
   return hasReqHeader(event, "accept", "application/json") || hasReqHeader(event, "user-agent", "curl/") || hasReqHeader(event, "user-agent", "httpie/") || hasReqHeader(event, "sec-fetch-mode", "cors") || event.path.startsWith("/api/") || event.path.endsWith(".json");
 }
-function normalizeError(error) {
+function normalizeError(error, isDev) {
   const cwd = typeof process.cwd === "function" ? process.cwd() : "/";
-  const stack = (error.stack || "").split("\n").splice(1).filter((line) => line.includes("at ")).map((line) => {
+  const stack = (error.unhandled || error.fatal) ? [] : (error.stack || "").split("\n").splice(1).filter((line) => line.includes("at ")).map((line) => {
     const text = line.replace(cwd + "/", "./").replace("webpack:/", "").replace("file://", "").trim();
     return {
       text,
@@ -605,7 +53,7 @@ function normalizeError(error) {
   });
   const statusCode = error.statusCode || 500;
   const statusMessage = error.statusMessage ?? (statusCode === 404 ? "Not Found" : "");
-  const message = error.message || error.toString();
+  const message = error.unhandled ? "internal server error" : error.message || error.toString();
   return {
     stack,
     statusCode,
@@ -657,63 +105,65 @@ function normalizeCookieHeaders(headers) {
   return outgoingHeaders;
 }
 
-const config = useRuntimeConfig();
-const _routeRulesMatcher = toRouteMatcher(
-  createRouter({ routes: config.nitro.routeRules })
-);
-function createRouteRulesHandler(ctx) {
-  return eventHandler((event) => {
-    const routeRules = getRouteRules(event);
-    if (routeRules.headers) {
-      setHeaders(event, routeRules.headers);
-    }
-    if (routeRules.redirect) {
-      let target = routeRules.redirect.to;
-      if (target.endsWith("/**")) {
-        let targetPath = event.path;
-        const strpBase = routeRules.redirect._redirectStripBase;
-        if (strpBase) {
-          targetPath = withoutBase(targetPath, strpBase);
-        }
-        target = joinURL(target.slice(0, -3), targetPath);
-      } else if (event.path.includes("?")) {
-        const query = getQuery(event.path);
-        target = withQuery(target, query);
-      }
-      return sendRedirect(event, target, routeRules.redirect.statusCode);
-    }
-    if (routeRules.proxy) {
-      let target = routeRules.proxy.to;
-      if (target.endsWith("/**")) {
-        let targetPath = event.path;
-        const strpBase = routeRules.proxy._proxyStripBase;
-        if (strpBase) {
-          targetPath = withoutBase(targetPath, strpBase);
-        }
-        target = joinURL(target.slice(0, -3), targetPath);
-      } else if (event.path.includes("?")) {
-        const query = getQuery(event.path);
-        target = withQuery(target, query);
-      }
-      return proxyRequest(event, target, {
-        fetch: ctx.localFetch,
-        ...routeRules.proxy
-      });
-    }
-  });
-}
-function getRouteRules(event) {
-  event.context._nitro = event.context._nitro || {};
-  if (!event.context._nitro.routeRules) {
-    event.context._nitro.routeRules = getRouteRulesForPath(
-      withoutBase(event.path.split("?")[0], useRuntimeConfig().app.baseURL)
-    );
+const errorHandler = (async function errorhandler(error, event) {
+  const { stack, statusCode, statusMessage, message } = normalizeError(error);
+  const errorObject = {
+    url: event.path,
+    statusCode,
+    statusMessage,
+    message,
+    stack: statusCode !== 404 ? `<pre>${stack.map((i) => `<span class="stack${i.internal ? " internal" : ""}">${i.text}</span>`).join("\n")}</pre>` : "",
+    // TODO: check and validate error.data for serialisation into query
+    data: error.data
+  };
+  if (error.unhandled || error.fatal) {
+    const tags = [
+      "[nuxt]",
+      "[request error]",
+      error.unhandled && "[unhandled]",
+      error.fatal && "[fatal]",
+      Number(errorObject.statusCode) !== 200 && `[${errorObject.statusCode}]`
+    ].filter(Boolean).join(" ");
+    console.error(tags, (error.message || error.toString() || "internal server error") + "\n" + stack.map((l) => "  " + l.text).join("  \n"));
   }
-  return event.context._nitro.routeRules;
-}
-function getRouteRulesForPath(path) {
-  return defu({}, ..._routeRulesMatcher.matchAll(path).reverse());
-}
+  if (event.handled) {
+    return;
+  }
+  setResponseStatus(event, errorObject.statusCode !== 200 && errorObject.statusCode || 500, errorObject.statusMessage);
+  if (isJsonRequest(event)) {
+    setResponseHeader(event, "Content-Type", "application/json");
+    return send(event, JSON.stringify(errorObject));
+  }
+  const reqHeaders = getRequestHeaders(event);
+  const isRenderingError = event.path.startsWith("/__nuxt_error") || !!reqHeaders["x-nuxt-error"];
+  const res = isRenderingError ? null : await useNitroApp().localFetch(
+    withQuery(joinURL(useRuntimeConfig(event).app.baseURL, "/__nuxt_error"), errorObject),
+    {
+      headers: { ...reqHeaders, "x-nuxt-error": "true" },
+      redirect: "manual"
+    }
+  ).catch(() => null);
+  if (!res) {
+    const { template } = await Promise.resolve().then(function () { return errorDev; }) ;
+    {
+      errorObject.description = errorObject.message;
+    }
+    if (event.handled) {
+      return;
+    }
+    setResponseHeader(event, "Content-Type", "text/html;charset=UTF-8");
+    return send(event, template(errorObject));
+  }
+  const html = await res.text();
+  if (event.handled) {
+    return;
+  }
+  for (const [header, value] of res.headers.entries()) {
+    setResponseHeader(event, header, value);
+  }
+  setResponseStatus(event, res.status && res.status !== 200 ? res.status : void 0, res.statusText);
+  return send(event, html);
+});
 
 const script = `
 if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
@@ -734,7 +184,7 @@ const _8vRCUOH6ae = (function(nitro) {
 
 const rootDir = "/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA";
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Ingek mosása és vasalása Budapesten magánszemélyek részére. Gyors, megbízható és professzionális szolgáltatás a VasalásMester csapatától. Bízza ránk az ingjeit!"},{"name":"format-detection","content":"telephone=no"},{"hid":"robots","name":"robots","content":"index, follow"},{"http-equiv":"Content-Security-Policy","content":"\n            default-src 'self' https: data:;\n            img-src 'self' https: http: data:;\n            font-src 'self' https: data:;\n            style-src 'self' https: 'unsafe-inline';\n            script-src 'self' https: 'unsafe-inline' 'unsafe-eval';\n            connect-src 'self' https: http: https://vasalasmester.hu/api/public;\n          "}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"canonical","href":"https://www.vasalasmester.hu"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet"}],"style":[],"script":[],"noscript":[],"title":"Vasalás Mester - Ingek mosása és vasalása Budapesten","htmlAttrs":{"lang":"hu"}};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Ingek mosása és vasalása, ruhatisztítás Budapesten magánszemélyek részére. Gyors, megbízható és professzionális szolgáltatás a VasalásMester csapatától. Bízza ránk az ingjeit!"},{"name":"format-detection","content":"telephone=no"},{"hid":"robots","name":"robots","content":"index, follow"},{"http-equiv":"Content-Security-Policy","content":"\n            default-src 'self' https: data:;\n            img-src 'self' https: http: data:;\n            font-src 'self' https: data:;\n            style-src 'self' https: 'unsafe-inline';\n            script-src 'self' https: 'unsafe-inline' 'unsafe-eval';\n            connect-src 'self' https: http: https://vasalasmester.hu/api/public;\n          "}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"canonical","href":"https://www.vasalasmester.hu"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet"}],"style":[],"script":[{"hid":"clarity","type":"text/javascript","children":"\n            (function(c,l,a,r,i,t,y){\n                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\n                t=l.createElement(r);t.async=1;t.src=\"https://www.clarity.ms/tag/\"+i;\n                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\n            })(window, document, \"clarity\", \"script\", \"p3kdgo8i0c\");\n          "}],"noscript":[],"title":"Vasalás Mester - Ingek mosása és vasalása, ruhatisztítás Budapesten","htmlAttrs":{"lang":"hu"}};
 
 const appRootTag = "div";
 
@@ -819,6 +269,786 @@ function onConsoleLog(callback) {
   });
   consola.wrapConsole();
 }
+
+const inlineAppConfig = {
+  "nuxt": {}
+};
+
+
+
+const appConfig = defuFn(inlineAppConfig);
+
+function getEnv(key, opts) {
+  const envKey = snakeCase(key).toUpperCase();
+  return destr(
+    process.env[opts.prefix + envKey] ?? process.env[opts.altPrefix + envKey]
+  );
+}
+function _isObject(input) {
+  return typeof input === "object" && !Array.isArray(input);
+}
+function applyEnv(obj, opts, parentKey = "") {
+  for (const key in obj) {
+    const subKey = parentKey ? `${parentKey}_${key}` : key;
+    const envValue = getEnv(subKey, opts);
+    if (_isObject(obj[key])) {
+      if (_isObject(envValue)) {
+        obj[key] = { ...obj[key], ...envValue };
+        applyEnv(obj[key], opts, subKey);
+      } else if (envValue === void 0) {
+        applyEnv(obj[key], opts, subKey);
+      } else {
+        obj[key] = envValue ?? obj[key];
+      }
+    } else {
+      obj[key] = envValue ?? obj[key];
+    }
+    if (opts.envExpansion && typeof obj[key] === "string") {
+      obj[key] = _expandFromEnv(obj[key]);
+    }
+  }
+  return obj;
+}
+const envExpandRx = /{{(.*?)}}/g;
+function _expandFromEnv(value) {
+  return value.replace(envExpandRx, (match, key) => {
+    return process.env[key] || match;
+  });
+}
+
+const _inlineRuntimeConfig = {
+  "app": {
+    "baseURL": "/",
+    "buildId": "dev",
+    "buildAssetsDir": "/_nuxt/",
+    "cdnURL": ""
+  },
+  "nitro": {
+    "envPrefix": "NUXT_",
+    "routeRules": {
+      "/__nuxt_error": {
+        "cache": false
+      },
+      "/sitemap.xsl": {
+        "headers": {
+          "Content-Type": "application/xslt+xml"
+        }
+      },
+      "/sitemap.xml": {
+        "redirect": {
+          "to": "/sitemap_index.xml",
+          "statusCode": 307
+        }
+      },
+      "/sitemap_index.xml": {},
+      "/__sitemap__/pages.xml": {},
+      "/pages-sitemap.xml": {
+        "redirect": {
+          "to": "/__sitemap__/pages.xml",
+          "statusCode": 307
+        }
+      },
+      "/__sitemap__/posts.xml": {},
+      "/posts-sitemap.xml": {
+        "redirect": {
+          "to": "/__sitemap__/posts.xml",
+          "statusCode": 307
+        }
+      },
+      "/_nuxt/builds/meta/**": {
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
+      },
+      "/_nuxt/builds/**": {
+        "headers": {
+          "cache-control": "public, max-age=1, immutable"
+        }
+      }
+    }
+  },
+  "public": {
+    "apiBaseUrl": "https://vasalasmester.hu/api/public"
+  },
+  "sitemap": {
+    "isI18nMapped": false,
+    "sitemapName": "sitemap.xml",
+    "isMultiSitemap": true,
+    "excludeAppSources": [],
+    "cacheMaxAgeSeconds": 0,
+    "autoLastmod": false,
+    "defaultSitemapsChunkSize": 1000,
+    "minify": false,
+    "sortEntries": true,
+    "debug": false,
+    "discoverImages": true,
+    "discoverVideos": true,
+    "sitemapsPathPrefix": "/__sitemap__/",
+    "isNuxtContentDocumentDriven": false,
+    "xsl": "/__sitemap__/style.xsl",
+    "xslTips": true,
+    "xslColumns": [
+      {
+        "label": "URL",
+        "width": "50%"
+      },
+      {
+        "label": "Images",
+        "width": "25%",
+        "select": "count(image:image)"
+      },
+      {
+        "label": "Last Updated",
+        "width": "25%",
+        "select": "concat(substring(sitemap:lastmod,0,11),concat(' ', substring(sitemap:lastmod,12,5)),concat(' ', substring(sitemap:lastmod,20,6)))"
+      }
+    ],
+    "credits": true,
+    "version": "6.1.5",
+    "sitemaps": {
+      "index": {
+        "sitemapName": "index",
+        "_route": "sitemap_index.xml",
+        "sitemaps": [],
+        "include": [],
+        "exclude": []
+      },
+      "pages": {
+        "include": [],
+        "exclude": [
+          "/_nuxt/**",
+          "/_**"
+        ],
+        "includeAppSources": true,
+        "defaults": {
+          "priority": 0.7,
+          "changefreq": "monthly"
+        },
+        "sitemapName": "pages",
+        "_route": "/__sitemap__/pages.xml",
+        "_hasSourceChunk": false
+      },
+      "posts": {
+        "include": [],
+        "exclude": [
+          "/_nuxt/**",
+          "/_**"
+        ],
+        "defaults": {
+          "priority": 0.9,
+          "changefreq": "daily"
+        },
+        "sitemapName": "posts",
+        "_route": "/__sitemap__/posts.xml",
+        "_hasSourceChunk": 1
+      }
+    }
+  },
+  "nuxt-site-config": {
+    "stack": [
+      {
+        "_context": "system",
+        "_priority": -15,
+        "name": "VasalasmesterSPA",
+        "env": "development"
+      },
+      {
+        "_context": "package.json",
+        "_priority": -10,
+        "name": "nuxt-app"
+      },
+      {
+        "_priority": -3,
+        "_context": "nuxt-site-config:config",
+        "url": "https://www.vasalasmester.hu",
+        "trailingSlash": true
+      }
+    ],
+    "version": "2.2.21",
+    "debug": false
+  },
+  "ipx": {
+    "baseURL": "/_ipx",
+    "alias": {},
+    "fs": {
+      "dir": [
+        "/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/public"
+      ]
+    },
+    "http": {
+      "domains": []
+    }
+  }
+};
+const envOptions = {
+  prefix: "NITRO_",
+  altPrefix: _inlineRuntimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_",
+  envExpansion: _inlineRuntimeConfig.nitro.envExpansion ?? process.env.NITRO_ENV_EXPANSION ?? false
+};
+const _sharedRuntimeConfig = _deepFreeze(
+  applyEnv(klona(_inlineRuntimeConfig), envOptions)
+);
+function useRuntimeConfig(event) {
+  if (!event) {
+    return _sharedRuntimeConfig;
+  }
+  if (event.context.nitro.runtimeConfig) {
+    return event.context.nitro.runtimeConfig;
+  }
+  const runtimeConfig = klona(_inlineRuntimeConfig);
+  applyEnv(runtimeConfig, envOptions);
+  event.context.nitro.runtimeConfig = runtimeConfig;
+  return runtimeConfig;
+}
+const _sharedAppConfig = _deepFreeze(klona(appConfig));
+function useAppConfig(event) {
+  if (!event) {
+    return _sharedAppConfig;
+  }
+  if (event.context.nitro.appConfig) {
+    return event.context.nitro.appConfig;
+  }
+  const appConfig$1 = klona(appConfig);
+  event.context.nitro.appConfig = appConfig$1;
+  return appConfig$1;
+}
+function _deepFreeze(object) {
+  const propNames = Object.getOwnPropertyNames(object);
+  for (const name of propNames) {
+    const value = object[name];
+    if (value && typeof value === "object") {
+      _deepFreeze(value);
+    }
+  }
+  return Object.freeze(object);
+}
+new Proxy(/* @__PURE__ */ Object.create(null), {
+  get: (_, prop) => {
+    console.warn(
+      "Please use `useRuntimeConfig()` instead of accessing config directly."
+    );
+    const runtimeConfig = useRuntimeConfig();
+    if (prop in runtimeConfig) {
+      return runtimeConfig[prop];
+    }
+    return void 0;
+  }
+});
+
+function defineNitroPlugin(def) {
+  return def;
+}
+
+const serverAssets = [{"baseName":"server","dir":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/server/assets"}];
+
+const assets = createStorage();
+
+for (const asset of serverAssets) {
+  assets.mount(asset.baseName, unstorage_47drivers_47fs({ base: asset.dir, ignore: (asset?.ignore || []) }));
+}
+
+const storage = createStorage({});
+
+storage.mount('/assets', assets);
+
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
+
+function useStorage(base = "") {
+  return base ? prefixStorage(storage, base) : storage;
+}
+
+function defaultCacheOptions() {
+  return {
+    name: "_",
+    base: "/cache",
+    swr: true,
+    maxAge: 1
+  };
+}
+function defineCachedFunction(fn, opts = {}) {
+  opts = { ...defaultCacheOptions(), ...opts };
+  const pending = {};
+  const group = opts.group || "nitro/functions";
+  const name = opts.name || fn.name || "_";
+  const integrity = opts.integrity || hash([fn, opts]);
+  const validate = opts.validate || ((entry) => entry.value !== void 0);
+  async function get(key, resolver, shouldInvalidateCache, event) {
+    const cacheKey = [opts.base, group, name, key + ".json"].filter(Boolean).join(":").replace(/:\/$/, ":index");
+    let entry = await useStorage().getItem(cacheKey).catch((error) => {
+      console.error(`[nitro] [cache] Cache read error.`, error);
+      useNitroApp().captureError(error, { event, tags: ["cache"] });
+    }) || {};
+    if (typeof entry !== "object") {
+      entry = {};
+      const error = new Error("Malformed data read from cache.");
+      console.error("[nitro] [cache]", error);
+      useNitroApp().captureError(error, { event, tags: ["cache"] });
+    }
+    const ttl = (opts.maxAge ?? 0) * 1e3;
+    if (ttl) {
+      entry.expires = Date.now() + ttl;
+    }
+    const expired = shouldInvalidateCache || entry.integrity !== integrity || ttl && Date.now() - (entry.mtime || 0) > ttl || validate(entry) === false;
+    const _resolve = async () => {
+      const isPending = pending[key];
+      if (!isPending) {
+        if (entry.value !== void 0 && (opts.staleMaxAge || 0) >= 0 && opts.swr === false) {
+          entry.value = void 0;
+          entry.integrity = void 0;
+          entry.mtime = void 0;
+          entry.expires = void 0;
+        }
+        pending[key] = Promise.resolve(resolver());
+      }
+      try {
+        entry.value = await pending[key];
+      } catch (error) {
+        if (!isPending) {
+          delete pending[key];
+        }
+        throw error;
+      }
+      if (!isPending) {
+        entry.mtime = Date.now();
+        entry.integrity = integrity;
+        delete pending[key];
+        if (validate(entry) !== false) {
+          let setOpts;
+          if (opts.maxAge && !opts.swr) {
+            setOpts = { ttl: opts.maxAge };
+          }
+          const promise = useStorage().setItem(cacheKey, entry, setOpts).catch((error) => {
+            console.error(`[nitro] [cache] Cache write error.`, error);
+            useNitroApp().captureError(error, { event, tags: ["cache"] });
+          });
+          if (event?.waitUntil) {
+            event.waitUntil(promise);
+          }
+        }
+      }
+    };
+    const _resolvePromise = expired ? _resolve() : Promise.resolve();
+    if (entry.value === void 0) {
+      await _resolvePromise;
+    } else if (expired && event && event.waitUntil) {
+      event.waitUntil(_resolvePromise);
+    }
+    if (opts.swr && validate(entry) !== false) {
+      _resolvePromise.catch((error) => {
+        console.error(`[nitro] [cache] SWR handler error.`, error);
+        useNitroApp().captureError(error, { event, tags: ["cache"] });
+      });
+      return entry;
+    }
+    return _resolvePromise.then(() => entry);
+  }
+  return async (...args) => {
+    const shouldBypassCache = await opts.shouldBypassCache?.(...args);
+    if (shouldBypassCache) {
+      return fn(...args);
+    }
+    const key = await (opts.getKey || getKey)(...args);
+    const shouldInvalidateCache = await opts.shouldInvalidateCache?.(...args);
+    const entry = await get(
+      key,
+      () => fn(...args),
+      shouldInvalidateCache,
+      args[0] && isEvent(args[0]) ? args[0] : void 0
+    );
+    let value = entry.value;
+    if (opts.transform) {
+      value = await opts.transform(entry, ...args) || value;
+    }
+    return value;
+  };
+}
+function cachedFunction(fn, opts = {}) {
+  return defineCachedFunction(fn, opts);
+}
+function getKey(...args) {
+  return args.length > 0 ? hash(args, {}) : "";
+}
+function escapeKey(key) {
+  return String(key).replace(/\W/g, "");
+}
+function defineCachedEventHandler(handler, opts = defaultCacheOptions()) {
+  const variableHeaderNames = (opts.varies || []).filter(Boolean).map((h) => h.toLowerCase()).sort();
+  const _opts = {
+    ...opts,
+    getKey: async (event) => {
+      const customKey = await opts.getKey?.(event);
+      if (customKey) {
+        return escapeKey(customKey);
+      }
+      const _path = event.node.req.originalUrl || event.node.req.url || event.path;
+      let _pathname;
+      try {
+        _pathname = escapeKey(decodeURI(parseURL(_path).pathname)).slice(0, 16) || "index";
+      } catch {
+        _pathname = "-";
+      }
+      const _hashedPath = `${_pathname}.${hash(_path)}`;
+      const _headers = variableHeaderNames.map((header) => [header, event.node.req.headers[header]]).map(([name, value]) => `${escapeKey(name)}.${hash(value)}`);
+      return [_hashedPath, ..._headers].join(":");
+    },
+    validate: (entry) => {
+      if (!entry.value) {
+        return false;
+      }
+      if (entry.value.code >= 400) {
+        return false;
+      }
+      if (entry.value.body === void 0) {
+        return false;
+      }
+      if (entry.value.headers.etag === "undefined" || entry.value.headers["last-modified"] === "undefined") {
+        return false;
+      }
+      return true;
+    },
+    group: opts.group || "nitro/handlers",
+    integrity: opts.integrity || hash([handler, opts])
+  };
+  const _cachedHandler = cachedFunction(
+    async (incomingEvent) => {
+      const variableHeaders = {};
+      for (const header of variableHeaderNames) {
+        const value = incomingEvent.node.req.headers[header];
+        if (value !== void 0) {
+          variableHeaders[header] = value;
+        }
+      }
+      const reqProxy = cloneWithProxy(incomingEvent.node.req, {
+        headers: variableHeaders
+      });
+      const resHeaders = {};
+      let _resSendBody;
+      const resProxy = cloneWithProxy(incomingEvent.node.res, {
+        statusCode: 200,
+        writableEnded: false,
+        writableFinished: false,
+        headersSent: false,
+        closed: false,
+        getHeader(name) {
+          return resHeaders[name];
+        },
+        setHeader(name, value) {
+          resHeaders[name] = value;
+          return this;
+        },
+        getHeaderNames() {
+          return Object.keys(resHeaders);
+        },
+        hasHeader(name) {
+          return name in resHeaders;
+        },
+        removeHeader(name) {
+          delete resHeaders[name];
+        },
+        getHeaders() {
+          return resHeaders;
+        },
+        end(chunk, arg2, arg3) {
+          if (typeof chunk === "string") {
+            _resSendBody = chunk;
+          }
+          if (typeof arg2 === "function") {
+            arg2();
+          }
+          if (typeof arg3 === "function") {
+            arg3();
+          }
+          return this;
+        },
+        write(chunk, arg2, arg3) {
+          if (typeof chunk === "string") {
+            _resSendBody = chunk;
+          }
+          if (typeof arg2 === "function") {
+            arg2(void 0);
+          }
+          if (typeof arg3 === "function") {
+            arg3();
+          }
+          return true;
+        },
+        writeHead(statusCode, headers2) {
+          this.statusCode = statusCode;
+          if (headers2) {
+            if (Array.isArray(headers2) || typeof headers2 === "string") {
+              throw new TypeError("Raw headers  is not supported.");
+            }
+            for (const header in headers2) {
+              const value = headers2[header];
+              if (value !== void 0) {
+                this.setHeader(
+                  header,
+                  value
+                );
+              }
+            }
+          }
+          return this;
+        }
+      });
+      const event = createEvent(reqProxy, resProxy);
+      event.fetch = (url, fetchOptions) => fetchWithEvent(event, url, fetchOptions, {
+        fetch: useNitroApp().localFetch
+      });
+      event.$fetch = (url, fetchOptions) => fetchWithEvent(event, url, fetchOptions, {
+        fetch: globalThis.$fetch
+      });
+      event.context = incomingEvent.context;
+      event.context.cache = {
+        options: _opts
+      };
+      const body = await handler(event) || _resSendBody;
+      const headers = event.node.res.getHeaders();
+      headers.etag = String(
+        headers.Etag || headers.etag || `W/"${hash(body)}"`
+      );
+      headers["last-modified"] = String(
+        headers["Last-Modified"] || headers["last-modified"] || (/* @__PURE__ */ new Date()).toUTCString()
+      );
+      const cacheControl = [];
+      if (opts.swr) {
+        if (opts.maxAge) {
+          cacheControl.push(`s-maxage=${opts.maxAge}`);
+        }
+        if (opts.staleMaxAge) {
+          cacheControl.push(`stale-while-revalidate=${opts.staleMaxAge}`);
+        } else {
+          cacheControl.push("stale-while-revalidate");
+        }
+      } else if (opts.maxAge) {
+        cacheControl.push(`max-age=${opts.maxAge}`);
+      }
+      if (cacheControl.length > 0) {
+        headers["cache-control"] = cacheControl.join(", ");
+      }
+      const cacheEntry = {
+        code: event.node.res.statusCode,
+        headers,
+        body
+      };
+      return cacheEntry;
+    },
+    _opts
+  );
+  return defineEventHandler(async (event) => {
+    if (opts.headersOnly) {
+      if (handleCacheHeaders(event, { maxAge: opts.maxAge })) {
+        return;
+      }
+      return handler(event);
+    }
+    const response = await _cachedHandler(
+      event
+    );
+    if (event.node.res.headersSent || event.node.res.writableEnded) {
+      return response.body;
+    }
+    if (handleCacheHeaders(event, {
+      modifiedTime: new Date(response.headers["last-modified"]),
+      etag: response.headers.etag,
+      maxAge: opts.maxAge
+    })) {
+      return;
+    }
+    event.node.res.statusCode = response.code;
+    for (const name in response.headers) {
+      const value = response.headers[name];
+      if (name === "set-cookie") {
+        event.node.res.appendHeader(
+          name,
+          splitCookiesString(value)
+        );
+      } else {
+        if (value !== void 0) {
+          event.node.res.setHeader(name, value);
+        }
+      }
+    }
+    return response.body;
+  });
+}
+function cloneWithProxy(obj, overrides) {
+  return new Proxy(obj, {
+    get(target, property, receiver) {
+      if (property in overrides) {
+        return overrides[property];
+      }
+      return Reflect.get(target, property, receiver);
+    },
+    set(target, property, value, receiver) {
+      if (property in overrides) {
+        overrides[property] = value;
+        return true;
+      }
+      return Reflect.set(target, property, value, receiver);
+    }
+  });
+}
+const cachedEventHandler = defineCachedEventHandler;
+
+function defineRenderHandler(render) {
+  const runtimeConfig = useRuntimeConfig();
+  return eventHandler(async (event) => {
+    const nitroApp = useNitroApp();
+    const ctx = { event, render, response: void 0 };
+    await nitroApp.hooks.callHook("render:before", ctx);
+    if (!ctx.response) {
+      if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
+        setResponseHeader(event, "Content-Type", "image/x-icon");
+        return send(
+          event,
+          "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        );
+      }
+      ctx.response = await ctx.render(event);
+      if (!ctx.response) {
+        const _currentStatus = getResponseStatus(event);
+        setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
+        return send(
+          event,
+          "No response returned from render handler: " + event.path
+        );
+      }
+    }
+    await nitroApp.hooks.callHook("render:response", ctx.response, ctx);
+    if (ctx.response.headers) {
+      setResponseHeaders(event, ctx.response.headers);
+    }
+    if (ctx.response.statusCode || ctx.response.statusMessage) {
+      setResponseStatus(
+        event,
+        ctx.response.statusCode,
+        ctx.response.statusMessage
+      );
+    }
+    return ctx.response.body;
+  });
+}
+
+const config = useRuntimeConfig();
+const _routeRulesMatcher = toRouteMatcher(
+  createRouter({ routes: config.nitro.routeRules })
+);
+function createRouteRulesHandler(ctx) {
+  return eventHandler((event) => {
+    const routeRules = getRouteRules(event);
+    if (routeRules.headers) {
+      setHeaders(event, routeRules.headers);
+    }
+    if (routeRules.redirect) {
+      let target = routeRules.redirect.to;
+      if (target.endsWith("/**")) {
+        let targetPath = event.path;
+        const strpBase = routeRules.redirect._redirectStripBase;
+        if (strpBase) {
+          targetPath = withoutBase(targetPath, strpBase);
+        }
+        target = joinURL(target.slice(0, -3), targetPath);
+      } else if (event.path.includes("?")) {
+        const query = getQuery(event.path);
+        target = withQuery(target, query);
+      }
+      return sendRedirect(event, target, routeRules.redirect.statusCode);
+    }
+    if (routeRules.proxy) {
+      let target = routeRules.proxy.to;
+      if (target.endsWith("/**")) {
+        let targetPath = event.path;
+        const strpBase = routeRules.proxy._proxyStripBase;
+        if (strpBase) {
+          targetPath = withoutBase(targetPath, strpBase);
+        }
+        target = joinURL(target.slice(0, -3), targetPath);
+      } else if (event.path.includes("?")) {
+        const query = getQuery(event.path);
+        target = withQuery(target, query);
+      }
+      return proxyRequest(event, target, {
+        fetch: ctx.localFetch,
+        ...routeRules.proxy
+      });
+    }
+  });
+}
+function getRouteRules(event) {
+  event.context._nitro = event.context._nitro || {};
+  if (!event.context._nitro.routeRules) {
+    event.context._nitro.routeRules = getRouteRulesForPath(
+      withoutBase(event.path.split("?")[0], useRuntimeConfig().app.baseURL)
+    );
+  }
+  return event.context._nitro.routeRules;
+}
+function getRouteRulesForPath(path) {
+  return defu({}, ..._routeRulesMatcher.matchAll(path).reverse());
+}
+
+getContext("nitro-app", {
+  asyncContext: false,
+  AsyncLocalStorage: void 0
+});
+
+const r=Object.create(null),i=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),s=new Proxy(r,{get(e,o){return i()[o]??r[o]},has(e,o){const E=i();return o in E||o in r},set(e,o,E){const b=i(!0);return b[o]=E,!0},deleteProperty(e,o){if(!o)return !1;const E=i(!0);return delete E[o],!0},ownKeys(){const e=i(!0);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",B=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:!0}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:!0}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:!1}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:!1}],["VERCEL","VERCEL_ENV",{ci:!1}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:!1}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:!0}],["RAILWAY","RAILWAY_PROJECT_ID"],["RAILWAY","RAILWAY_SERVICE_ID"],["DENO-DEPLOY","DENO_DEPLOYMENT_ID"],["FIREBASE_APP_HOSTING","FIREBASE_APP_HOSTING",{ci:!0}]];function p(){if(globalThis.process?.env)for(const e of B){const o=e[1]||e[0];if(globalThis.process?.env[o])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:!1}:{name:"",ci:!1}}const l=p(),d=l.name;function n(e){return e?e!=="false":!1}const I=globalThis.process?.platform||"",T=n(s.CI)||l.ci!==!1,R=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(s.DEBUG);const A=t==="test"||n(s.TEST);n(s.MINIMAL)||T||A||!R;const _=/^win/i.test(I);!n(s.NO_COLOR)&&(n(s.FORCE_COLOR)||(R||_)&&s.TERM!=="dumb"||T);const C=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(C?.split(".")[0])||null;const y=globalThis.process||Object.create(null),c={versions:{}};new Proxy(y,{get(e,o){if(o==="env")return s;if(o in e)return e[o];if(o in c)return c[o]}});const L=globalThis.process?.release?.name==="node",a=!!globalThis.Bun||!!globalThis.process?.versions?.bun,D=!!globalThis.Deno,O=!!globalThis.fastly,S=!!globalThis.Netlify,N=!!globalThis.EdgeRuntime,P=globalThis.navigator?.userAgent==="Cloudflare-Workers",F=[[S,"netlify"],[N,"edge-light"],[P,"workerd"],[O,"fastly"],[D,"deno"],[a,"bun"],[L,"node"]];function G(){const e=F.find(o=>o[0]);if(e)return {name:e[1]}}const u=G();u?.name||"";
+
+const scheduledTasks = false;
+
+const tasks = {
+  
+};
+
+const __runningTasks__ = {};
+async function runTask(name, {
+  payload = {},
+  context = {}
+} = {}) {
+  if (__runningTasks__[name]) {
+    return __runningTasks__[name];
+  }
+  if (!(name in tasks)) {
+    throw createError({
+      message: `Task \`${name}\` is not available!`,
+      statusCode: 404
+    });
+  }
+  if (!tasks[name].resolve) {
+    throw createError({
+      message: `Task \`${name}\` is not implemented!`,
+      statusCode: 501
+    });
+  }
+  const handler = await tasks[name].resolve();
+  const taskEvent = { name, payload, context };
+  __runningTasks__[name] = handler.run(taskEvent);
+  try {
+    const res = await __runningTasks__[name];
+    return res;
+  } finally {
+    delete __runningTasks__[name];
+  }
+}
+
+function buildAssetsDir() {
+  return useRuntimeConfig().app.buildAssetsDir;
+}
+function buildAssetsURL(...path) {
+  return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
+}
+function publicAssetsURL(...path) {
+  const app = useRuntimeConfig().app;
+  const publicBase = app.cdnURL || app.baseURL;
+  return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
+}
+
+const defineSitemapEventHandler = defineEventHandler;
 
 function normalizeSiteConfig(config) {
   if (typeof config.indexable !== "undefined")
@@ -962,92 +1192,6 @@ function createSitePathResolver(e, options = {}) {
   };
 }
 
-function defineNitroPlugin(def) {
-  return def;
-}
-
-const scheduledTasks = false;
-
-const tasks = {
-  
-};
-
-const __runningTasks__ = {};
-async function runTask(name, {
-  payload = {},
-  context = {}
-} = {}) {
-  if (__runningTasks__[name]) {
-    return __runningTasks__[name];
-  }
-  if (!(name in tasks)) {
-    throw createError({
-      message: `Task \`${name}\` is not available!`,
-      statusCode: 404
-    });
-  }
-  if (!tasks[name].resolve) {
-    throw createError({
-      message: `Task \`${name}\` is not implemented!`,
-      statusCode: 501
-    });
-  }
-  const handler = await tasks[name].resolve();
-  const taskEvent = { name, payload, context };
-  __runningTasks__[name] = handler.run(taskEvent);
-  try {
-    const res = await __runningTasks__[name];
-    return res;
-  } finally {
-    delete __runningTasks__[name];
-  }
-}
-
-function defineRenderHandler(handler) {
-  const runtimeConfig = useRuntimeConfig();
-  return eventHandler(async (event) => {
-    if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
-      setResponseHeader(event, "Content-Type", "image/x-icon");
-      return send(
-        event,
-        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-      );
-    }
-    const response = await handler(event);
-    if (!response) {
-      const _currentStatus = getResponseStatus(event);
-      setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
-      return send(
-        event,
-        "No response returned from render handler: " + event.path
-      );
-    }
-    const nitroApp = useNitroApp();
-    await nitroApp.hooks.callHook("render:response", response, { event });
-    if (response.headers) {
-      setResponseHeaders(event, response.headers);
-    }
-    if (response.statusCode || response.statusMessage) {
-      setResponseStatus(event, response.statusCode, response.statusMessage);
-    }
-    return response.body;
-  });
-}
-
-function buildAssetsDir() {
-  return useRuntimeConfig().app.buildAssetsDir;
-}
-function buildAssetsURL(...path) {
-  return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
-}
-function publicAssetsURL(...path) {
-  const app = useRuntimeConfig().app;
-  const publicBase = app.cdnURL || app.baseURL;
-  return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
-}
-
-const defineSitemapEventHandler = defineEventHandler;
-
 const _Ot8HphMr41 = defineNitroPlugin(async (nitroApp) => {
   nitroApp.hooks.hook("render:html", async (ctx, { event }) => {
     const routeOptions = getRouteRules(event);
@@ -1068,66 +1212,6 @@ const plugins = [
 _u9wSvVfNkt,
 _Ot8HphMr41
 ];
-
-const errorHandler = (async function errorhandler(error, event) {
-  const { stack, statusCode, statusMessage, message } = normalizeError(error);
-  const errorObject = {
-    url: event.path,
-    statusCode,
-    statusMessage,
-    message,
-    stack: statusCode !== 404 ? `<pre>${stack.map((i) => `<span class="stack${i.internal ? " internal" : ""}">${i.text}</span>`).join("\n")}</pre>` : "",
-    // TODO: check and validate error.data for serialisation into query
-    data: error.data
-  };
-  if (error.unhandled || error.fatal) {
-    const tags = [
-      "[nuxt]",
-      "[request error]",
-      error.unhandled && "[unhandled]",
-      error.fatal && "[fatal]",
-      Number(errorObject.statusCode) !== 200 && `[${errorObject.statusCode}]`
-    ].filter(Boolean).join(" ");
-    console.error(tags, (error.message || error.toString() || "internal server error") + "\n" + stack.map((l) => "  " + l.text).join("  \n"));
-  }
-  if (event.handled) {
-    return;
-  }
-  setResponseStatus(event, errorObject.statusCode !== 200 && errorObject.statusCode || 500, errorObject.statusMessage);
-  if (isJsonRequest(event)) {
-    setResponseHeader(event, "Content-Type", "application/json");
-    return send(event, JSON.stringify(errorObject));
-  }
-  const reqHeaders = getRequestHeaders(event);
-  const isRenderingError = event.path.startsWith("/__nuxt_error") || !!reqHeaders["x-nuxt-error"];
-  const res = isRenderingError ? null : await useNitroApp().localFetch(
-    withQuery(joinURL(useRuntimeConfig(event).app.baseURL, "/__nuxt_error"), errorObject),
-    {
-      headers: { ...reqHeaders, "x-nuxt-error": "true" },
-      redirect: "manual"
-    }
-  ).catch(() => null);
-  if (!res) {
-    const { template } = await Promise.resolve().then(function () { return errorDev; }) ;
-    {
-      errorObject.description = errorObject.message;
-    }
-    if (event.handled) {
-      return;
-    }
-    setResponseHeader(event, "Content-Type", "text/html;charset=UTF-8");
-    return send(event, template(errorObject));
-  }
-  const html = await res.text();
-  if (event.handled) {
-    return;
-  }
-  for (const [header, value] of res.headers.entries()) {
-    setResponseHeader(event, header, value);
-  }
-  setResponseStatus(event, res.status && res.status !== 200 ? res.status : void 0, res.statusText);
-  return send(event, html);
-});
 
 const _iUk6av = defineEventHandler(async (e) => {
   if (e.context.siteConfig)
@@ -2146,12 +2230,16 @@ const _NqM7Rf = lazyEventHandler(() => {
 
 const _lazy_KWgRiU = () => Promise.resolve().then(function () { return sitemap$1; });
 const _lazy_nSRK74 = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_aiiGn6 = () => Promise.resolve().then(function () { return sitemap_index_xml$1; });
+const _lazy_jaPxDI = () => Promise.resolve().then(function () { return _sitemap__xml$1; });
 
 const handlers = [
   { route: '/api/sitemap', handler: _lazy_KWgRiU, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_nSRK74, lazy: true, middleware: false, method: undefined },
   { route: '', handler: _iUk6av, lazy: false, middleware: true, method: undefined },
   { route: '/__site-config__/debug.json', handler: _zf7Luv, lazy: false, middleware: false, method: undefined },
+  { route: '/sitemap_index.xml', handler: _lazy_aiiGn6, lazy: true, middleware: false, method: undefined },
+  { route: '/__sitemap__/**:sitemap', handler: _lazy_jaPxDI, lazy: true, middleware: false, method: undefined },
   { route: '/__sitemap__/debug.json', handler: _ht5Jl4, lazy: false, middleware: false, method: undefined },
   { route: '/__sitemap__/style.xsl', handler: _i2Q7VM, lazy: false, middleware: false, method: undefined },
   { route: '/sitemap.xml', handler: _RUpy8x, lazy: false, middleware: false, method: undefined },
@@ -2163,8 +2251,8 @@ function createNitroApp() {
   const config = useRuntimeConfig();
   const hooks = createHooks();
   const captureError = (error, context = {}) => {
-    const promise = hooks.callHookParallel("error", error, context).catch((_err) => {
-      console.error("Error while capturing another error", _err);
+    const promise = hooks.callHookParallel("error", error, context).catch((error_) => {
+      console.error("Error while capturing another error", error_);
     });
     if (context.event && isEvent(context.event)) {
       const errors = context.event.context.nitro?.errors;
@@ -2183,17 +2271,17 @@ function createNitroApp() {
       return errorHandler(error, event);
     },
     onRequest: async (event) => {
-      await nitroApp.hooks.callHook("request", event).catch((error) => {
+      await nitroApp$1.hooks.callHook("request", event).catch((error) => {
         captureError(error, { event, tags: ["request"] });
       });
     },
     onBeforeResponse: async (event, response) => {
-      await nitroApp.hooks.callHook("beforeResponse", event, response).catch((error) => {
+      await nitroApp$1.hooks.callHook("beforeResponse", event, response).catch((error) => {
         captureError(error, { event, tags: ["request", "response"] });
       });
     },
     onAfterResponse: async (event, response) => {
-      await nitroApp.hooks.callHook("afterResponse", event, response).catch((error) => {
+      await nitroApp$1.hooks.callHook("afterResponse", event, response).catch((error) => {
         captureError(error, { event, tags: ["request", "response"] });
       });
     }
@@ -2268,39 +2356,44 @@ function createNitroApp() {
     localFetch,
     captureError
   };
-  for (const plugin of plugins) {
-    try {
-      plugin(app);
-    } catch (err) {
-      captureError(err, { tags: ["plugin"] });
-      throw err;
-    }
-  }
   return app;
 }
-const nitroApp = createNitroApp();
-const useNitroApp = () => nitroApp;
+function runNitroPlugins(nitroApp2) {
+  for (const plugin of plugins) {
+    try {
+      plugin(nitroApp2);
+    } catch (error) {
+      nitroApp2.captureError(error, { tags: ["plugin"] });
+      throw error;
+    }
+  }
+}
+const nitroApp$1 = createNitroApp();
+function useNitroApp() {
+  return nitroApp$1;
+}
+runNitroPlugins(nitroApp$1);
 
+const nitroApp = useNitroApp();
 const server = new Server(toNodeListener(nitroApp.h3App));
 function getAddress() {
   if (d === "stackblitz" || process.env.NITRO_NO_UNIX_SOCKET || process.versions.bun) {
     return 0;
   }
   const socketName = `worker-${process.pid}-${threadId}.sock`;
-  if (a) {
-    return join("\\\\.\\pipe\\nitro", socketName);
-  } else {
-    const socketDir = join(tmpdir(), "nitro");
-    mkdirSync(socketDir, { recursive: true });
-    return join(socketDir, socketName);
+  if (_) {
+    return join(String.raw`\\.\pipe\nitro`, socketName);
   }
+  const socketDir = join(tmpdir(), "nitro");
+  mkdirSync(socketDir, { recursive: true });
+  return join(socketDir, socketName);
 }
 const listenAddress = getAddress();
 server.listen(listenAddress, () => {
   const _address = server.address();
-  parentPort.postMessage({
+  parentPort?.postMessage({
     event: "listen",
-    address: typeof _address === "string" ? { socketPath: _address } : { host: "localhost", port: _address.port }
+    address: typeof _address === "string" ? { socketPath: _address } : { host: "localhost", port: _address?.port }
   });
 });
 nitroApp.router.get(
@@ -2333,10 +2426,10 @@ trapUnhandledNodeErrors();
 async function onShutdown(signal) {
   await nitroApp.hooks.callHook("close");
 }
-parentPort.on("message", async (msg) => {
+parentPort?.on("message", async (msg) => {
   if (msg && msg.event === "shutdown") {
     await onShutdown();
-    parentPort.postMessage({ event: "exit" });
+    parentPort?.postMessage({ event: "exit" });
   }
 });
 
@@ -2352,10 +2445,6 @@ const errorDev = /*#__PURE__*/Object.freeze({
 });
 
 const sources$1 = [
-    {
-        "sourceType": "user",
-        "fetch": "/api/sitemap"
-    },
     {
         "context": {
             "name": "sitemap:urls",
@@ -2426,6 +2515,15 @@ const sources$1 = [
             },
             {
                 "loc": "/vasalas"
+            },
+            {
+                "loc": "/sitemap.xml"
+            },
+            {
+                "loc": "/pages-sitemap.xml"
+            },
+            {
+                "loc": "/posts-sitemap.xml"
             }
         ],
         "sourceType": "app"
@@ -2437,7 +2535,15 @@ const globalSources = /*#__PURE__*/Object.freeze({
   sources: sources$1
 });
 
-const sources = {};
+const sources = {
+    "pages": [],
+    "posts": [
+        {
+            "sourceType": "user",
+            "fetch": "/api/sitemap"
+        }
+    ]
+};
 
 const childSources = /*#__PURE__*/Object.freeze({
   __proto__: null,
@@ -2454,9 +2560,17 @@ const sitemap = defineSitemapEventHandler(async (e) => {
     }
     const posts = await response.json();
     return posts.map((post) => {
+      const lastModified = post.modifiedAt ? new Date(post.modifiedAt).toISOString() : new Date(post.created_at).toISOString();
+      const imageLoc = post.image ? `https://vasalasmester.hu/storage/${post.image}` : void 0;
       return {
         loc: `/posts/${post.slug}`,
-        lastmod: post.modifiedAt ? new Date(post.modifiedAt) : /* @__PURE__ */ new Date()
+        lastmod: lastModified,
+        images: imageLoc ? [
+          {
+            loc: imageLoc,
+            caption: `K\xE9p a poszthoz: ${post.slug}`
+          }
+        ] : []
       };
     });
   } catch (error) {
@@ -2684,13 +2798,12 @@ const renderer = defineRenderHandler(async (event) => {
   }
   if (!isRenderingIsland || true) {
     const link = [];
-    for (const style in styles) {
-      const resource = styles[style];
+    for (const resource of Object.values(styles)) {
       if ("inline" in getQuery(resource.file)) {
         continue;
       }
       if (!isRenderingIsland || resource.file.includes("scoped") && !resource.file.includes("pages/")) {
-        link.push({ rel: "stylesheet", href: renderer.rendererContext.buildAssetsURL(resource.file) });
+        link.push({ rel: "stylesheet", href: renderer.rendererContext.buildAssetsURL(resource.file), crossorigin: "" });
       }
     }
     if (link.length) {
@@ -2814,7 +2927,7 @@ async function renderInlineStyles(usedModules) {
   const styleMap = await getSSRStyles();
   const inlinedStyles = /* @__PURE__ */ new Set();
   for (const mod of usedModules) {
-    if (mod in styleMap) {
+    if (mod in styleMap && styleMap[mod]) {
       for (const style of await styleMap[mod]()) {
         inlinedStyles.add(style);
       }
@@ -2864,7 +2977,7 @@ function splitPayload(ssrContext) {
 }
 function getServerComponentHTML(body) {
   const match = body[0].match(ROOT_NODE_REGEX);
-  return match ? match[1] : body[0];
+  return match?.[1] || body[0];
 }
 const SSR_SLOT_TELEPORT_MARKER = /^uid=([^;]*);slot=(.*)$/;
 const SSR_CLIENT_TELEPORT_MARKER = /^uid=([^;]*);client=(.*)$/;
@@ -2874,10 +2987,10 @@ function getSlotIslandResponse(ssrContext) {
     return void 0;
   }
   const response = {};
-  for (const slot in ssrContext.islandContext.slots) {
-    response[slot] = {
-      ...ssrContext.islandContext.slots[slot],
-      fallback: ssrContext.teleports?.[`island-fallback=${slot}`]
+  for (const [name, slot] of Object.entries(ssrContext.islandContext.slots)) {
+    response[name] = {
+      ...slot,
+      fallback: ssrContext.teleports?.[`island-fallback=${name}`]
     };
   }
   return response;
@@ -2887,10 +3000,10 @@ function getClientIslandResponse(ssrContext) {
     return void 0;
   }
   const response = {};
-  for (const clientUid in ssrContext.islandContext.components) {
-    const html = ssrContext.teleports?.[clientUid].replaceAll("<!--teleport start anchor-->", "") || "";
+  for (const [clientUid, component] of Object.entries(ssrContext.islandContext.components)) {
+    const html = ssrContext.teleports?.[clientUid]?.replaceAll("<!--teleport start anchor-->", "") || "";
     response[clientUid] = {
-      ...ssrContext.islandContext.components[clientUid],
+      ...component,
       html,
       slots: getComponentSlotTeleport(ssrContext.teleports ?? {})
     };
@@ -2946,6 +3059,124 @@ function replaceIslandTeleports(ssrContext, html) {
 const renderer$1 = /*#__PURE__*/Object.freeze({
   __proto__: null,
   default: renderer
+});
+
+async function buildSitemapIndex(resolvers, runtimeConfig) {
+  const {
+    sitemaps,
+    // enhancing
+    autoLastmod,
+    // chunking
+    defaultSitemapsChunkSize,
+    autoI18n,
+    isI18nMapped,
+    sortEntries,
+    sitemapsPathPrefix
+  } = runtimeConfig;
+  if (!sitemaps)
+    throw new Error("Attempting to build a sitemap index without required `sitemaps` configuration.");
+  function maybeSort(urls) {
+    return sortEntries ? sortSitemapUrls(urls) : urls;
+  }
+  const isChunking = typeof sitemaps.chunks !== "undefined";
+  const chunks = {};
+  if (isChunking) {
+    const sitemap = sitemaps.chunks;
+    const sources = await resolveSitemapSources(await globalSitemapSources());
+    const normalisedUrls = resolveSitemapEntries(sitemap, sources, { autoI18n, isI18nMapped }, resolvers);
+    const enhancedUrls = normalisedUrls.map((e) => defu$1(e, sitemap.defaults));
+    const sortedUrls = maybeSort(enhancedUrls);
+    sortedUrls.forEach((url, i) => {
+      const chunkIndex = Math.floor(i / defaultSitemapsChunkSize);
+      chunks[chunkIndex] = chunks[chunkIndex] || { urls: [] };
+      chunks[chunkIndex].urls.push(url);
+    });
+  } else {
+    for (const sitemap in sitemaps) {
+      if (sitemap !== "index") {
+        chunks[sitemap] = chunks[sitemap] || { urls: [] };
+      }
+    }
+  }
+  const entries = [];
+  for (const name in chunks) {
+    const sitemap = chunks[name];
+    const entry = {
+      _sitemapName: name,
+      sitemap: resolvers.canonicalUrlResolver(joinURL(sitemapsPathPrefix, `/${name}.xml`))
+    };
+    let lastmod = sitemap.urls.filter((a) => !!a?.lastmod).map((a) => typeof a.lastmod === "string" ? new Date(a.lastmod) : a.lastmod).sort((a, b) => (b?.getTime() || 0) - (a?.getTime() || 0))?.[0];
+    if (!lastmod && autoLastmod)
+      lastmod = /* @__PURE__ */ new Date();
+    if (lastmod)
+      entry.lastmod = normaliseDate(lastmod);
+    entries.push(entry);
+  }
+  if (sitemaps.index) {
+    entries.push(...sitemaps.index.sitemaps.map((entry) => {
+      return typeof entry === "string" ? { sitemap: entry } : entry;
+    }));
+  }
+  return entries;
+}
+function urlsToIndexXml(sitemaps, resolvers, { version, xsl, credits, minify }) {
+  const sitemapXml = sitemaps.map((e) => [
+    "    <sitemap>",
+    `        <loc>${escapeValueForXml(e.sitemap)}</loc>`,
+    // lastmod is optional
+    e.lastmod ? `        <lastmod>${escapeValueForXml(e.lastmod)}</lastmod>` : false,
+    "    </sitemap>"
+  ].filter(Boolean).join("\n")).join("\n");
+  return wrapSitemapXml([
+    '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    sitemapXml,
+    "</sitemapindex>"
+  ], resolvers, { version, xsl, credits, minify });
+}
+
+const sitemap_index_xml = defineEventHandler(async (e) => {
+  const runtimeConfig = useSimpleSitemapRuntimeConfig();
+  const nitro = useNitroApp();
+  const resolvers = useNitroUrlResolvers(e);
+  const sitemaps = await buildSitemapIndex(resolvers, runtimeConfig);
+  const indexResolvedCtx = { sitemaps };
+  await nitro.hooks.callHook("sitemap:index-resolved", indexResolvedCtx);
+  const output = urlsToIndexXml(indexResolvedCtx.sitemaps, resolvers, runtimeConfig);
+  const ctx = { sitemap: output, sitemapName: "sitemap" };
+  await nitro.hooks.callHook("sitemap:output", ctx);
+  setHeader(e, "Content-Type", "text/xml; charset=UTF-8");
+  if (runtimeConfig.cacheMaxAgeSeconds)
+    setHeader(e, "Cache-Control", `public, max-age=${runtimeConfig.cacheMaxAgeSeconds}, must-revalidate`);
+  else
+    setHeader(e, "Cache-Control", `no-cache, no-store`);
+  return ctx.sitemap;
+});
+
+const sitemap_index_xml$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: sitemap_index_xml
+});
+
+const _sitemap__xml = defineEventHandler(async (e) => {
+  const runtimeConfig = useSimpleSitemapRuntimeConfig(e);
+  const { sitemaps } = runtimeConfig;
+  const sitemapName = withoutLeadingSlash(withoutTrailingSlash((getRouterParam(e, "sitemap") || e.path)?.replace(".xml", "").replace(runtimeConfig.sitemapsPathPrefix, "")));
+  const isChunking = typeof sitemaps.chunks !== "undefined" && !Number.isNaN(Number(sitemapName));
+  if (!sitemapName || !(sitemapName in sitemaps) && !isChunking) {
+    return createError({
+      statusCode: 404,
+      message: `Sitemap "${sitemapName}" not found.`
+    });
+  }
+  return createSitemap(e, isChunking ? {
+    ...sitemaps.chunks,
+    sitemapName
+  } : sitemaps[sitemapName], runtimeConfig);
+});
+
+const _sitemap__xml$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: _sitemap__xml
 });
 
 const styles = {};

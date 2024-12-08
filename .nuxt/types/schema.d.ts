@@ -159,18 +159,54 @@ declare module 'nuxt/schema' {
       version: string,
 
       sitemaps: {
-         "sitemap.xml": {
+         index: {
             sitemapName: string,
 
-            route: string,
+            _route: string,
 
-            defaults: any,
+            sitemaps: Array<any>,
 
+            include: Array<any>,
+
+            exclude: Array<any>,
+         },
+
+         pages: {
             include: Array<any>,
 
             exclude: Array<string>,
 
             includeAppSources: boolean,
+
+            defaults: {
+               priority: number,
+
+               changefreq: string,
+            },
+
+            sitemapName: string,
+
+            _route: string,
+
+            _hasSourceChunk: boolean,
+         },
+
+         posts: {
+            include: Array<any>,
+
+            exclude: Array<string>,
+
+            defaults: {
+               priority: number,
+
+               changefreq: string,
+            },
+
+            sitemapName: string,
+
+            _route: string,
+
+            _hasSourceChunk: number,
          },
       },
    },

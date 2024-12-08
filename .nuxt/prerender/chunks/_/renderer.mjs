@@ -1,59 +1,32 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { eventHandler, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getQuery, createError, appendResponseHeader, getResponseStatusText } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/h3/dist/index.mjs';
-import { stringify, uneval } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/devalue/index.js';
-import { joinRelativeURL, joinURL, withoutTrailingSlash } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/ufo/dist/index.mjs';
-import { renderToString } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue/server-renderer/index.mjs';
-import { propsToString, renderSSRHead } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/@unhead/ssr/dist/index.mjs';
-import { u as useRuntimeConfig, a as useNitroApp, b as useStorage, g as getRouteRules } from '../runtime.mjs';
-import { createServerHead as createServerHead$1, CapoPlugin } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/unhead/dist/index.mjs';
-import { version, unref } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue/index.mjs';
-import { defineHeadPlugin } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/@unhead/shared/dist/index.mjs';
-
-function defineRenderHandler(handler) {
-  const runtimeConfig = useRuntimeConfig();
-  return eventHandler(async (event) => {
-    if (event.path === `${runtimeConfig.app.baseURL}favicon.ico`) {
-      setResponseHeader(event, "Content-Type", "image/x-icon");
-      return send(
-        event,
-        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-      );
-    }
-    const response = await handler(event);
-    if (!response) {
-      const _currentStatus = getResponseStatus(event);
-      setResponseStatus(event, _currentStatus === 200 ? 500 : _currentStatus);
-      return send(
-        event,
-        "No response returned from render handler: " + event.path
-      );
-    }
-    const nitroApp = useNitroApp();
-    await nitroApp.hooks.callHook("render:response", response, { event });
-    if (response.headers) {
-      setResponseHeaders(event, response.headers);
-    }
-    if (response.statusCode || response.statusMessage) {
-      setResponseStatus(event, response.statusCode, response.statusMessage);
-    }
-    return response.body;
-  });
-}
-
-function baseURL() {
-  return useRuntimeConfig().app.baseURL;
-}
-function buildAssetsDir() {
-  return useRuntimeConfig().app.buildAssetsDir;
-}
-function buildAssetsURL(...path) {
-  return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
-}
-function publicAssetsURL(...path) {
-  const app = useRuntimeConfig().app;
-  const publicBase = app.cdnURL || app.baseURL;
-  return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
-}
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { getQuery, createError, appendResponseHeader, getResponseStatus, getResponseStatusText } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/h3/dist/index.mjs';
+import { stringify, uneval } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/devalue/index.js';
+import { joinURL, withoutTrailingSlash } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ufo/dist/index.mjs';
+import { renderToString } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue/server-renderer/index.mjs';
+import { propsToString, renderSSRHead } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/@unhead/ssr/dist/index.mjs';
+import { h as defineRenderHandler, i as buildAssetsURL, p as publicAssetsURL, j as useStorage, k as getRouteRules, l as useRuntimeConfig, c as useNitroApp } from '../nitro/nitro.mjs';
+import { createServerHead as createServerHead$1, CapoPlugin } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unhead/dist/index.mjs';
+import { version, unref } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue/index.mjs';
+import { defineHeadPlugin } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/@unhead/shared/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/destr/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/hookable/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ofetch/dist/node.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unenv/runtime/fetch/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/klona/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/defu/dist/defu.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/scule/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/drivers/fs.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/drivers/fs-lite.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unstorage/drivers/lru-cache.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/radix3/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unctx/dist/index.mjs';
+import 'node:fs';
+import 'node:url';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/pathe/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/unenv/runtime/npm/consola.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ipx/dist/index.mjs';
+import 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/ohash/dist/index.mjs';
 
 const Vue3 = version[0] === "3";
 
@@ -118,7 +91,7 @@ const unheadPlugins = true ? [CapoPlugin({ track: true })] : [];
 
 const renderSSRHeadOptions = {"omitLineBreaks":false};
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Ingek mosása és vasalása Budapesten magánszemélyek részére. Gyors, megbízható és professzionális szolgáltatás a VasalásMester csapatától. Bízza ránk az ingjeit!"},{"name":"format-detection","content":"telephone=no"},{"hid":"robots","name":"robots","content":"index, follow"},{"http-equiv":"Content-Security-Policy","content":"\n            default-src 'self' https: data:;\n            img-src 'self' https: http: data:;\n            font-src 'self' https: data:;\n            style-src 'self' https: 'unsafe-inline';\n            script-src 'self' https: 'unsafe-inline' 'unsafe-eval';\n            connect-src 'self' https: http: https://vasalasmester.hu/api/public;\n          "}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"canonical","href":"https://www.vasalasmester.hu"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet"}],"style":[],"script":[],"noscript":[],"title":"Vasalás Mester - Ingek mosása és vasalása Budapesten","htmlAttrs":{"lang":"hu"}};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Ingek mosása és vasalása, ruhatisztítás Budapesten magánszemélyek részére. Gyors, megbízható és professzionális szolgáltatás a VasalásMester csapatától. Bízza ránk az ingjeit!"},{"name":"format-detection","content":"telephone=no"},{"hid":"robots","name":"robots","content":"index, follow"},{"http-equiv":"Content-Security-Policy","content":"\n            default-src 'self' https: data:;\n            img-src 'self' https: http: data:;\n            font-src 'self' https: data:;\n            style-src 'self' https: 'unsafe-inline';\n            script-src 'self' https: 'unsafe-inline' 'unsafe-eval';\n            connect-src 'self' https: http: https://vasalasmester.hu/api/public;\n          "}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"},{"rel":"canonical","href":"https://www.vasalasmester.hu"},{"rel":"preconnect","href":"https://fonts.googleapis.com"},{"rel":"preconnect","href":"https://fonts.gstatic.com"},{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap\" rel=\"stylesheet"}],"style":[],"script":[{"hid":"clarity","type":"text/javascript","children":"\n            (function(c,l,a,r,i,t,y){\n                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};\n                t=l.createElement(r);t.async=1;t.src=\"https://www.clarity.ms/tag/\"+i;\n                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);\n            })(window, document, \"clarity\", \"script\", \"p3kdgo8i0c\");\n          "}],"noscript":[],"title":"Vasalás Mester - Ingek mosása és vasalása, ruhatisztítás Budapesten","htmlAttrs":{"lang":"hu"}};
 
 const appRootTag = "div";
 
@@ -298,10 +271,9 @@ const renderer = defineRenderHandler(async (event) => {
   }
   {
     const link = [];
-    for (const style in styles) {
-      const resource = styles[style];
+    for (const resource of Object.values(styles)) {
       {
-        link.push({ rel: "stylesheet", href: renderer.rendererContext.buildAssetsURL(resource.file) });
+        link.push({ rel: "stylesheet", href: renderer.rendererContext.buildAssetsURL(resource.file), crossorigin: "" });
       }
     }
     if (link.length) {
@@ -393,7 +365,7 @@ async function renderInlineStyles(usedModules) {
   const styleMap = await getSSRStyles();
   const inlinedStyles = /* @__PURE__ */ new Set();
   for (const mod of usedModules) {
-    if (mod in styleMap) {
+    if (mod in styleMap && styleMap[mod]) {
       for (const style of await styleMap[mod]()) {
         inlinedStyles.add(style);
       }
@@ -442,10 +414,5 @@ function splitPayload(ssrContext) {
   };
 }
 
-const renderer$1 = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  default: renderer
-});
-
-export { baseURL as b, publicAssetsURL as p, renderer$1 as r };
+export { renderer as default };
 //# sourceMappingURL=renderer.mjs.map

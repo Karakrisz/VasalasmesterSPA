@@ -32,6 +32,9 @@
         "../*",
         "../*"
       ],
+      "nitropack/types": [
+        "../node_modules/nitropack/types"
+      ],
       "nitropack": [
         "../node_modules/nitropack"
       ],
@@ -65,9 +68,6 @@
       "nuxt": [
         "../node_modules/nuxt"
       ],
-      "#internal/nuxt/paths": [
-        "../node_modules/nuxt/dist/core/runtime/nitro/paths"
-      ],
       "~": [
         "./.."
       ],
@@ -79,6 +79,9 @@
       ],
       "@@": [
         "./.."
+      ],
+      "#shared": [
+        "../shared"
       ],
       "assets": [
         "../assets"
@@ -92,6 +95,15 @@
       "public/*": [
         "../public/*"
       ],
+      "#build": [
+        "./"
+      ],
+      "#build/*": [
+        "./*"
+      ],
+      "#internal/nuxt/paths": [
+        "../node_modules/nuxt/dist/core/runtime/nitro/paths"
+      ],
       "#image": [
         "../node_modules/@nuxt/image/dist/runtime"
       ],
@@ -99,16 +111,22 @@
         "../node_modules/@nuxt/image/dist/runtime/*"
       ],
       "#sitemap": [
-        "../node_modules/@nuxtjs/sitemap/dist/runtime/types"
+        "../node_modules/@nuxtjs/sitemap/dist/runtime"
+      ],
+      "#sitemap/*": [
+        "../node_modules/@nuxtjs/sitemap/dist/runtime/*"
       ],
       "#vue-router": [
         "./vue-router"
       ],
-      "#internal/nuxt-site-config": [
-        "../node_modules/nuxt-site-config/dist/runtime/nitro/composables"
+      "#site-config": [
+        "../node_modules/nuxt-site-config/dist/runtime"
       ],
-      "#internal/nuxt-site-config/*": [
-        "../node_modules/nuxt-site-config/dist/runtime/nitro/composables/*"
+      "#site-config/*": [
+        "../node_modules/nuxt-site-config/dist/runtime/*"
+      ],
+      "#internal/nuxt-site-config": [
+        "../node_modules/nuxt-site-config/dist/runtime/nitro/composable-barrel-deprecated"
       ]
     },
     "lib": [

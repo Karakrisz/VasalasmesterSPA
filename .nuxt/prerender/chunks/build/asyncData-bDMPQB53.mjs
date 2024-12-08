@@ -1,4 +1,4 @@
-import { ref, shallowRef, toRef, getCurrentInstance, onServerPrefetch, unref } from 'file:///Applications/XAMPP/xamppfiles/htdocs/vasalasApp/node_modules/vue/index.mjs';
+import { ref, shallowRef, toRef, getCurrentInstance, onServerPrefetch, unref } from 'file:///Applications/XAMPP/xamppfiles/htdocs/VasalasmesterSPA/node_modules/vue/index.mjs';
 import { e as useNuxtApp, f as asyncDataDefaults, g as createError } from './server.mjs';
 
 const isDefer = (dedupe) => dedupe === "defer" || dedupe === false;
