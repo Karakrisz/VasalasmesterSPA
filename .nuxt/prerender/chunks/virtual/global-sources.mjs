@@ -95,103 +95,112 @@ const sources = [
                 "loc": "/"
             },
             {
-                "loc": "/rolunk"
-            },
-            {
-                "loc": "/javitas"
-            },
-            {
-                "loc": "/meretre-szabas-igazitas"
-            },
-            {
-                "loc": "/nagy-mennyiseg"
-            },
-            {
                 "loc": "/mosas"
-            },
-            {
-                "loc": "/tisztitas"
-            },
-            {
-                "loc": "/vasalas"
-            },
-            {
-                "loc": "/kolcsonzes"
-            },
-            {
-                "loc": "/szolgaltatasok"
-            },
-            {
-                "loc": "/egyeni-igenyek"
-            },
-            {
-                "loc": "/ajanlatkeres"
-            },
-            {
-                "loc": "/arlista"
-            },
-            {
-                "loc": "/kapcsolat"
-            },
-            {
-                "loc": "/galeria"
             },
             {
                 "loc": "/varras"
             },
             {
+                "loc": "/rolunk"
+            },
+            {
+                "loc": "/tisztitas"
+            },
+            {
+                "loc": "/javitas"
+            },
+            {
+                "loc": "/kolcsonzes"
+            },
+            {
+                "loc": "/nagy-mennyiseg"
+            },
+            {
+                "loc": "/szolgaltatasok"
+            },
+            {
+                "loc": "/vasalas"
+            },
+            {
+                "loc": "/ajanlatkeres"
+            },
+            {
+                "loc": "/meretre-szabas-igazitas"
+            },
+            {
+                "loc": "/galeria"
+            },
+            {
+                "loc": "/arlista"
+            },
+            {
                 "loc": "/adatvedelmi-tajekoztato"
             },
             {
-                "loc": "/posts/ingek-mosasa-es-vasalasa-a-4-keruletben-bizza-a-vasalas-mesterere"
+                "loc": "/egyeni-igenyek"
             },
-            null,
-            null,
             {
-                "loc": "/posts/ingek-mosasa-es-vasalasa-a-5-keruletben-bizza-a-vasalas-mesterere"
+                "loc": "/kapcsolat"
+            },
+            {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-a-4-keruletben-bizza-a-vasalas-mesterere"
             },
             null,
             {
                 "loc": "/posts/ingek-mosasa-es-vasalasa-a-6-keruletben-bizza-a-vasalas-mesterere"
             },
             {
-                "loc": "/posts"
+                "loc": "/posts/ingek-mosasa-es-vasalasa-a-5-keruletben-bizza-a-vasalas-mesterere"
             },
+            null,
+            null,
             {
-                "loc": "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre"
+                "loc": "/posts"
             },
             {
                 "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten-bizza-a-vasalas-mesterere"
             },
             {
-                "loc": "/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik"
+                "loc": "/posts/ingek-professzionalis-mosasa-es-vasalasa-budapesten-miert-bizza-a-vasalas-mesterre"
             },
             {
-                "loc": "/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben"
+                "loc": "/posts/professzionalis-ingmosas-es-vasalas-budapesten-a-vasalas-mester-minden-ingrol-gondoskodik"
             },
             {
                 "loc": "/posts/ingek-mosasa-es-vasalasa-a-2-keruletben-professzionalis-szolgaltatasok-a-vasalas-mesternel"
             },
             {
-                "loc": "/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas"
-            },
-            {
-                "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten"
-            },
-            {
-                "loc": "/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben"
-            },
-            {
-                "loc": "/posts/ruhatisztitas-budapesten-tisztasag-es-frissesseg"
-            },
-            {
-                "loc": "/posts/ruhak-tisztitasa-budapesten-tiszta-es-rendezett-megjelenes-a-szakerto-kezeiben"
+                "loc": "/posts/mosoda-budapesten-professzionalis-szolgaltatasok-a-tisztasag-jegyeben-a-vasalasmester-hu-tol"
             },
             {
                 "loc": "/posts/ingek-mosasa-es-vasalasa-a-3-keruletben-bizza-a-vasalas-mesterere"
             },
             {
+                "loc": "/posts/ingek-mosasa-es-vasalasa-budapesten"
+            },
+            {
                 "loc": "/posts/ing-oltony-mosas-tisztitas-es-vasalas-haztol-hazig-a-2-keruletben"
+            },
+            {
+                "loc": "/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas"
+            },
+            {
+                "loc": "/posts/ruhatisztitas-budapesten-professzionalis-gondoskodas-a-vasalasmester-hu-tol"
+            },
+            {
+                "loc": "/posts/ruhatisztitas-budapesten-haztol-hazig-mosas-es-vasalas-kenyelmesen-profi-kezekben"
+            },
+            {
+                "loc": "/posts/ruhatisztitas-budapesten-a-minosegi-szolgaltatas-fontossaga-a-tokeletes-megjelenesert"
+            },
+            {
+                "loc": "/posts/ing-mosas-vasalas-es-oltony-tisztitas-haztol-hazig-a-13-keruletben"
+            },
+            {
+                "loc": "/posts/ruhak-tisztitasa-budapesten-tiszta-es-rendezett-megjelenes-a-szakerto-kezeiben"
+            },
+            {
+                "loc": "/posts/mosas-es-vasalas-haztol-hazig-budapesten-kenyelmes-es-megbizhato-ruhatisztito-szolgaltatas"
             },
             {
                 "loc": "/posts/mosas-es-vasalas-haztol-hazig-ing-es-zako-tisztitas-kenyelmesen"
@@ -200,16 +209,7 @@ const sources = [
                 "loc": "/posts/oltony-es-zako-tisztitas-budapesten-a-profizmus-es-minoseg-jegyeben"
             },
             {
-                "loc": "/posts/ruhatisztitas-budapesten-professzionalis-gondoskodas-a-vasalasmester-hu-tol"
-            },
-            {
-                "loc": "/posts/ruhatisztitas-budapesten-a-minosegi-szolgaltatas-fontossaga-a-tokeletes-megjelenesert"
-            },
-            {
-                "loc": "/posts/mosoda-budapesten-professzionalis-szolgaltatasok-a-tisztasag-jegyeben-a-vasalasmester-hu-tol"
-            },
-            {
-                "loc": "/posts/mosas-es-vasalas-haztol-hazig-budapest-1-keruleteben-oltony-es-ing-tisztitas"
+                "loc": "/posts/ruhatisztitas-budapesten-tisztasag-es-frissesseg"
             }
         ],
         "sourceType": "app"

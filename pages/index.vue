@@ -32,14 +32,14 @@ const latestPosts = itemsPost.value?.slice(-3) || []
         <h1
           class="slider-content__tBox__h1 text-transform-uppercase text-color-w f-800"
         >
-          TISZTA ILLATOS EGYENES
+          TISZTA ILLATOS SIMA
         </h1>
         <h5 class="slider-content__tBox__h5 text-color-w f-500">
           Mi így szeretjük.
         </h5>
         <p class="slider-content__tBox__p text-color-w f-500">
           Cégünk komplex szolgáltatást nyújt magánszemélyeknek és
-          cégeknek egyaránt már 35 éve! Akár egy ruhadarabot is elvállalunk,
+          cégeknek egyaránt már 14 éve! Akár egy ruhadarabot is elvállalunk,
           vagy akár több ezret is egyszerre - igénytől függően.
         </p>
         <div class="slider-content__tBox__lBox">
@@ -140,7 +140,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
-              src="/img/services/services.webp"
+              src="/img/services/vasalas.webp"
               alt="Vasalás Mester"
               class="services-content__linkItextBox__content__img"
             />
@@ -158,7 +158,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
-              src="/img/services/services2.webp"
+              src="/img/services/mosas.webp"
               alt="Vasalás Mester"
               class="services-content__linkItextBox__content__img"
             />
@@ -176,7 +176,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
-              src="/img/services/services3.webp"
+              src="/img/services/tisztitas.webp"
               alt="Vasalás Mester"
               class="services-content__linkItextBox__content__img"
             />
@@ -194,14 +194,14 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
-              src="/img/services/services4.webp"
+              src="/img/services/etterem.webp"
               alt="Vasalás Mester"
               class="services-content__linkItextBox__content__img"
             />
             <div
               class="services-content__linkItextBox__content__tBox text-center pa"
             >
-              VARRÁS
+              ÉTTERMI TEXTIL
             </div>
           </NuxtLink>
         </div>
@@ -212,14 +212,14 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
-              src="/img/services/services5.webp"
+              src="/img/services/lakastextil.webp"
               alt="Vasalás Mester"
               class="services-content__linkItextBox__content__img"
             />
             <div
               class="services-content__linkItextBox__content__tBox text-center pa"
             >
-              JAVÍTÁS
+              LAKÁSTEXTIL
             </div>
           </NuxtLink>
         </div>
@@ -230,14 +230,14 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
-              src="/img/services/services6.webp"
+              src="/img/services/menyasszony.webp"
               alt="Vasalás Mester"
               class="services-content__linkItextBox__content__img"
             />
             <div
               class="services-content__linkItextBox__content__tBox text-center pa"
             >
-              NAGY MENNYISÉG
+              MENYASSZONYI RUHA
             </div>
           </NuxtLink>
         </div>
@@ -266,14 +266,14 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
-              src="/img/services/services8.webp"
+              src="/img/services/fuggony.webp"
               alt="Vasalás Mester"
               class="services-content__linkItextBox__content__img"
             />
             <div
               class="services-content__linkItextBox__content__tBox text-center pa"
             >
-              KÖLCSÖNZÉS
+              FÜGGÖNY
             </div>
           </NuxtLink>
         </div>
@@ -291,7 +291,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             <div
               class="services-content__linkItextBox__content__tBox text-center pa"
             >
-              EGYÉNI IGÉNYEK MEGVALÓSÍTÁSA
+              Varrás
             </div>
           </NuxtLink>
         </div>
@@ -313,7 +313,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
           RÓLUNK
         </h4>
         <p class="page-information-content__iTextBox__p f-500">
-          A vasalás.net 100%-ig magyar tulajdonban álló vállalkozás, amely
+          A Vasalás Mester 100%-ig magyar tulajdonban álló vállalkozás, amely
           2011-ben jelent meg a ruhatisztító piacon. Fő profiljába tartozik az
           otthonokban felgyülemlett szennyes ruházat mosása, vasalása; a
           különleges kezelést igénylő kabátok, öltönyök, és kosztümök
@@ -323,7 +323,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
         <p class="page-information-content__iTextBox__p f-500">
           Ha már Ön is unja a vasalást, mosást és a házimunkát; ha nincs ideje
           és már jó ideje tornyosul a szennyes; ha egy megbízható ruhatisztítót,
-          ruhaklinikát keres, akkor nézze meg a vasalás.net ajánlatát!
+          ruhaklinikát keres, akkor nézze meg a Vasalás Mester ajánlatát!
         </p>
         <div class="page-information-content__iTextBox__link-box">
           <NuxtLink
@@ -493,7 +493,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
           to="/ajanlatkeres"
           class="blog-slug-content__linkBox__link text-color-w f-700"
         >
-          IGEN, Nekem is erre van szükségem!
+          IGEN, Én is megrendelem
         </NuxtLink>
       </div>
     </div>

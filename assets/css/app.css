@@ -330,6 +330,14 @@ ul {
   border-radius: 1.7em;
 }
 
+.services-content__linkItextBox__content {
+  height: 39vh;
+}
+
+.services-content__linkItextBox__content__img {
+  object-fit: cover;
+}
+
 .footer-content__bottom__infoBox__header {
   border-top-left-radius: 3.5em;
 }
@@ -2221,7 +2229,7 @@ ul {
   }
   .slider-content__tBox__h1 {
     margin: 4% 0 2% 0;
-    width: 8em;
+    width: 6em;
     font-size: 1.7rem;
   }
   .slider-content__tBox__p {
@@ -2298,6 +2306,7 @@ ul {
   .services-content__linkItextBox {
     padding: 4%;
   }
+
   .page-information-content__img {
     margin: 6% 0 9% 0;
   }

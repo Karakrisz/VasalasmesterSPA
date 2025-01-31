@@ -1,1 +1,0 @@
-{"id":"dev","timestamp":1733659540656,"matcher":{"static":{"/sitemap.xml":{"redirect":"/sitemap_index.xml"},"/pages-sitemap.xml":{"redirect":"/__sitemap__/pages.xml"},"/posts-sitemap.xml":{"redirect":"/__sitemap__/posts.xml"}},"wildcard":{},"dynamic":{}},"prerendered":[]}

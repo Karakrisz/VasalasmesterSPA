@@ -91,10 +91,11 @@ const sendEmail = async () => {
             ÍRJON NEKÜNK, HAMAR VÁLASZOLUNK
           </h6>
           <p class="footer-content__text-box__p text-color-w">
-            Amennyiben bármilyen kérdése merülne fel, ne habozzon kapcsolatba
-            lépni velünk! Írjon nekünk bátran, és csapatunk igyekszik a lehető
-            leggyorsabban válaszolni minden érdeklődésre. Várjuk, hogy halljunk
-            Öntől!
+            Ha bármilyen kérdése felmerül, forduljon hozzánk bizalommal!
+            Csapatunk elkötelezetten dolgozik azon, hogy a lehető
+            <strong><i>leggyorsabban és legprecízebben</i></strong>
+            megválaszolja minden felmerülő kérdését. Írjon bátran – örömmel
+            segítünk, és várjuk megkeresését!
           </p>
           <div class="contact-form">
             <form @submit.prevent="sendEmail">
@@ -235,7 +236,7 @@ const sendEmail = async () => {
               <p class="footer-content__bottom__infoBox__header__lBox__p">
                 <a
                   class="footer-content__bottom__infoBox__header__lBox__p__link footer-content__bottom__infoBox__header__lBox__p__link--format text-color-w"
-                  href="mailto:kapcsolat@vasalas.net"
+                  href="mailto:info@vasalasmester.hu"
                 >
                   <NuxtImg
                     src="/img/footer/mail.svg"
@@ -243,7 +244,7 @@ const sendEmail = async () => {
                     class="footer-content__bottom__infoBox__header__lBox__img"
                     height="100%"
                   />
-                  kapcsolat@vasalas.net
+                  info@vasalasmester.hu
                 </a>
               </p>
             </div>

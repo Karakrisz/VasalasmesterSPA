@@ -1,1 +1,0 @@
-import{u as a}from"./BIYctmPJ.js";import{c as s,a as t,o}from"./WjbR7Qtt.js";const l={class:"supage-content position-relative"},p={__name:"galeria",setup(r){return a({title:"Galéria"}),(n,e)=>(o(),s("div",l,e[0]||(e[0]=[t("h2",{class:"supage-content__h2"},"Galéria",-1),t("p",null,"feltöltés alatt...",-1)])))}};export{p as default};
