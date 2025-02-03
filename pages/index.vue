@@ -248,14 +248,14 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
-              src="/img/services/services7.webp"
+              src="/img/services/szonyeg.webp"
               alt="Vasalás Mester"
               class="services-content__linkItextBox__content__img"
             />
             <div
               class="services-content__linkItextBox__content__tBox text-center pa"
             >
-              MÉRETRE SZABÁS IGAZÍTÁS
+              SZŐNYEG
             </div>
           </NuxtLink>
         </div>
@@ -314,16 +314,15 @@ const latestPosts = itemsPost.value?.slice(-3) || []
         </h4>
         <p class="page-information-content__iTextBox__p f-500">
           A Vasalás Mester 100%-ig magyar tulajdonban álló vállalkozás, amely
-          2011-ben jelent meg a ruhatisztító piacon. Fő profiljába tartozik az
-          otthonokban felgyülemlett szennyes ruházat mosása, vasalása; a
-          különleges kezelést igénylő kabátok, öltönyök, és kosztümök
-          tisztítása; valamint a ruhák, huzatok, textilanyagok varrása és
-          javítása.
+          2011-ben jelent meg a ruhatisztító piacon. Fő profiljába tartozik a
+          felgyülemlett szennyes ruházat mosása, vasalása, a különleges kezelést
+          igénylő kabátok, öltönyök, és menyasszonyi ruhák, függönyök valamint a
+          szőnyegek tisztítása.
         </p>
         <p class="page-information-content__iTextBox__p f-500">
-          Ha már Ön is unja a vasalást, mosást és a házimunkát; ha nincs ideje
-          és már jó ideje tornyosul a szennyes; ha egy megbízható ruhatisztítót,
-          ruhaklinikát keres, akkor nézze meg a Vasalás Mester ajánlatát!
+          Ha már Ön is unja a vasalást, mosást és már jó ideje tornyosul a
+          szennyes, ha egy megbízható ruhatisztítót keres, akkor nézze meg a
+          Vasalasmester ajánlatát!
         </p>
         <div class="page-information-content__iTextBox__link-box">
           <NuxtLink

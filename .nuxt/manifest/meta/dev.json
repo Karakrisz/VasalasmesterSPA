@@ -1,1 +1,1 @@
-{"id":"dev","timestamp":1738329841289,"matcher":{"static":{"/sitemap.xml":{"redirect":"/sitemap_index.xml"},"/pages-sitemap.xml":{"redirect":"/__sitemap__/pages.xml"},"/posts-sitemap.xml":{"redirect":"/__sitemap__/posts.xml"}},"wildcard":{},"dynamic":{}},"prerendered":[]}
+{"id":"dev","timestamp":1738584701310,"matcher":{"static":{"/sitemap.xml":{"redirect":"/sitemap_index.xml"},"/pages-sitemap.xml":{"redirect":"/__sitemap__/pages.xml"},"/posts-sitemap.xml":{"redirect":"/__sitemap__/posts.xml"}},"wildcard":{},"dynamic":{}},"prerendered":[]}
