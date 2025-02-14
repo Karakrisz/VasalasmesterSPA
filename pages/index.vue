@@ -23,12 +23,12 @@ const latestPosts = itemsPost.value?.slice(-3) || []
           height="100%"
         />
 
-        <NuxtImg
+        <!-- <NuxtImg
           src="/img/slider/slider-elem2.svg"
           alt="Vasalás Mester"
           class="slider-content__tBox__nextTopImg pa"
           height="100%"
-        />
+        /> -->
         <h1
           class="slider-content__tBox__h1 text-transform-uppercase text-color-w f-800"
         >
@@ -190,7 +190,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
 
         <div class="services-content__linkItextBox__content pr">
           <NuxtLink
-            to="varras"
+            to="ettermi-textil"
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
@@ -208,7 +208,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
 
         <div class="services-content__linkItextBox__content pr">
           <NuxtLink
-            to="javitas"
+            to="lakas-textil"
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
@@ -226,7 +226,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
 
         <div class="services-content__linkItextBox__content pr">
           <NuxtLink
-            to="nagy-mennyiseg"
+            to="menyasszonyi-ruha"
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
@@ -244,7 +244,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
 
         <div class="services-content__linkItextBox__content pr">
           <NuxtLink
-            to="meretre-szabas-igazitas"
+            to="szonyegtisztitas"
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
@@ -255,14 +255,14 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             <div
               class="services-content__linkItextBox__content__tBox text-center pa"
             >
-              SZŐNYEG
+              SZŐNYETISZTÍTÁS
             </div>
           </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">
           <NuxtLink
-            to="kolcsonzes"
+            to="fuggonytisztitas"
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg
@@ -273,14 +273,14 @@ const latestPosts = itemsPost.value?.slice(-3) || []
             <div
               class="services-content__linkItextBox__content__tBox text-center pa"
             >
-              FÜGGÖNY
+              FÜGGÖNYTISZTÍTÁS
             </div>
           </NuxtLink>
         </div>
 
         <div class="services-content__linkItextBox__content pr">
           <NuxtLink
-            to="egyeni-igenyek"
+            to="varras"
             class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
           >
             <NuxtImg

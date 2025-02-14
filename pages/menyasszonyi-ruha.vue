@@ -1,11 +1,11 @@
 <script setup>
 useHead({
-  title: 'Vasalás - Vasalás Mester',
+  title: 'Menyasszonyi Ruha Tisztítás - Vasalás Mester',
   meta: [
     {
       name: 'description',
       content:
-        'Professzionális ingvasalási szolgáltatások Budapesten és környékén a Vasalás Mesterrel. Környezetbarát eljárások és csomagolás.',
+        'Professzionális menyasszonyi ruha tisztítás Budapesten és környékén a Vasalás Mesterrel. Kíméletes és precíz tisztítás a legértékesebb ruhadarab számára.',
     },
   ],
 })
@@ -21,59 +21,43 @@ useHead({
     />
   </div>
   <div class="supage-content supage-content--services bg-color-w pr">
-    <h2 class="supage-content__h2 text-transform-uppercase">
-      Vasalás - Vasalás Mester
+    <h2 class="supage-content__h2">
+      Menyasszonyi Ruha Tisztítás - Vasalás Mester
     </h2>
 
     <p class="supage-content__p">
-      A Vasalás Mester professzionális vasalási szolgáltatásokat kínál
-      Budapesten és környékén, különös tekintettel az ingek vasalására. Az ingek
-      a mindennapi öltözködés alapvető darabjai, melyek kifogástalan megjelenést
-      és precíz gondozást igényelnek. Szolgáltatásunk garantálja, hogy ingjei
-      mindig tökéletesen simák és rendezettek lesznek, készen állva bármilyen
-      üzleti találkozóra, eseményre vagy hétköznapi viselésre.
+      A Vasalás Mester professzionális menyasszonyi ruha tisztítási
+      szolgáltatást kínál Budapesten és környékén. A menyasszonyi ruha az egyik
+      legfontosabb és legértékesebb ruhadarab, amely különleges gondoskodást
+      igényel az esküvő után. Szolgáltatásunk biztosítja, hogy a ruha tökéletes
+      állapotban maradjon az emlékek megőrzése érdekében.
     </p>
 
-    <h3 class="supage-content__h3">
-      Ingek Vasalása - Szakértelem és Gondosság
-    </h3>
+    <h3 class="supage-content__h3">Tökéletes tisztaság és gondoskodás</h3>
 
     <p class="supage-content__p">
-      Az ingek vasalása a Vasalás Mester egyik specialitása, amely különös
-      figyelmet és szaktudást igényel. Minden inghez egyedi megközelítést
-      alkalmazunk, figyelembe véve az anyag típusát, a szabást és az ügyfél
-      egyedi igényeit. Tudjuk, hogy az ingek tiszta és rendezett megjelenése
-      fontos szerepet játszik az első benyomások kialakításában, ezért különös
-      figyelmet fordítunk a precíz vasalásra, a gombok körüli gondos kezelésre
-      és a varratok alapos kisimítására.
+      A menyasszonyi ruhák tisztítása speciális eljárásokat igényel, mivel
+      gyakran finom csipkék, gyöngyök és egyéb díszítések találhatók rajtuk.
+      Szakértő csapatunk a legkíméletesebb és leghatékonyabb módszerekkel
+      távolítja el a foltokat és a szennyeződéseket, hogy a ruha megőrizze
+      eredeti szépségét.
     </p>
 
-    <h4 class="supage-content__h4">Környezetbarát Vasalási Eljárások</h4>
+    <h4 class="supage-content__h4">Környezetbarát tisztítás</h4>
 
     <p class="supage-content__p">
-      A Vasalás Mester kiemelt figyelmet fordít a környezetvédelemre. Minden
-      vasalási eljárásunk során környezetbarát tisztítószereket használunk,
-      amelyek nemcsak hatékonyak, hanem kímélik is a ruhák szövetét és a
-      környezetet. Ezen túlmenően a vasalási folyamat során energiahatékony
-      gépeket és technológiákat alkalmazunk, amelyek minimálisra csökkentik az
-      energiafogyasztást és a környezeti terhelést. Ruháink csomagolásához
-      újrahasznosítható és biológiailag lebomló anyagokat használunk, így
-      hozzájárulva a fenntartható fejlődéshez.
+      Kíméletes, környezetbarát tisztítószereket és eljárásokat alkalmazunk,
+      amelyek biztosítják, hogy a ruha anyaga és díszítései ne sérüljenek meg.
+      Minden menyasszonyi ruha egyedi kezelést kap, hogy a legjobb eredményt
+      érjük el.
     </p>
 
-    <h5 class="supage-content__h5">
-      Szolgáltatási Terület és Kényelmi Szolgáltatások
-    </h5>
+    <h5 class="supage-content__h5">Biztonságos tárolás és szállítás</h5>
 
     <p class="supage-content__p">
-      Szolgáltatásaink Budapesten és környékén érhetők el, biztosítva a
-      kényelmet és gyorsaságot ügyfeleink számára. Függetlenül attól, hogy a
-      belvárosban vagy a külvárosban tartózkodik, a Vasalás Mester könnyen
-      elérhető, és gyors szállítási szolgáltatást kínálunk, hogy a vasalt ruhák
-      mindig időben és kifogástalan állapotban érkezzenek meg. Szolgáltatásaink
-      között szerepel a ruhák háztól-házig történő szállítása, így Önnek nem
-      kell időt és energiát fordítania a vasalás megszervezésére. Bízza ránk a
-      feladatot, és élvezze a gondtalan kiszolgálás előnyeit!
+      A tisztítás után a menyasszonyi ruhát gondosan becsomagoljuk, hogy
+      megőrizze tökéletes állapotát. Igény szerint szállítási szolgáltatást is
+      biztosítunk, hogy Önnek ne kelljen aggódnia a ruha épsége miatt.
     </p>
 
     <h6 class="supage-content__h6">Miért válassza a Vasalás Mestert?</h6>
@@ -81,48 +65,34 @@ useHead({
     <ul class="supage-content__ul">
       <li class="supage-content__ul__li">
         <strong class="supage-content__ul__li__strong"
-          >Magas minőségű vasalási szolgáltatások:</strong
+          >Szakértői tisztítás:</strong
         >
-        Minden ruhadarabot nagy odafigyeléssel kezelünk, a legjobb eredmények
-        érdekében. Az ingek mellett más ruhadarabok, mint blúzok, nadrágok és
-        szoknyák vasalását is vállaljuk.
+        Finom anyagokhoz is megfelelő, kíméletes eljárások.
       </li>
       <li class="supage-content__ul__li">
         <strong class="supage-content__ul__li__strong"
-          >Környezetbarát eljárások:</strong
+          >Környezetbarát megoldások:</strong
         >
-        Fenntartható módszerekkel dolgozunk, amelyek megóvják a környezetet. A
-        vasalási folyamat során minimális vegyi anyag felhasználásával és
-        energiatakarékos gépekkel dolgozunk.
+        Kíméletes, vegyszermentes tisztítás az érzékeny anyagok védelme
+        érdekében.
       </li>
       <li class="supage-content__ul__li">
         <strong class="supage-content__ul__li__strong"
-          >Gyors és megbízható szállítás:</strong
+          >Biztonságos kezelés és tárolás:</strong
         >
-        Biztosítjuk, hogy a vasalt ruhák, különösen az ingek, időben és
-        kifogástalan állapotban érkezzenek meg. Pontosságunkkal és
-        megbízhatóságunkkal garantáljuk az Ön elégedettségét.
+        A ruha megóvása érdekében speciális csomagolási és tárolási technikákat
+        alkalmazunk.
       </li>
     </ul>
 
     <p class="supage-content__p">
       <strong class="supage-content__p__strong"
         >Lépjen kapcsolatba velünk</strong
-      >, és tapasztalja meg a Vasalás Mester professzionális vasalási
-      szolgáltatásait, amelyek egyszerre biztosítanak kiváló minőséget és
-      környezetbarát megoldásokat. Bízza ránk a vasalást, és élvezze a
-      tökéletesen sima és friss ruhák nyújtotta kényelmet!
+      >, és tapasztalja meg a Vasalás Mester megbízható menyasszonyi ruha
+      tisztítási szolgáltatását. Bízza ránk értékes ruháját, és mi biztosítjuk,
+      hogy makulátlan állapotban maradjon!
     </p>
 
-    <div class="blog-slug-content__psychologicalBox text-center">
-      <p class="blog-slug-content__psychologicalBox__p">
-        <i class="blog-slug-content__psychologicalBox__i f-500"
-          >Már csak egy lépés választ el a tökéletes tisztaságtól és
-          frissességtől! <br />
-          Nyomd meg az alábbi gombot az igenhez!</i
-        >
-      </p>
-    </div>
     <div class="blog-slug-content__linkBox text-center">
       <NuxtLink
         to="/ajanlatkeres"
@@ -196,7 +166,7 @@ useHead({
 
       <div class="services-content__linkItextBox__content pr">
         <NuxtLink
-          to="ettermi-textil"
+          to="/ettermi-textil"
           class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
         >
           <NuxtImg
@@ -214,7 +184,7 @@ useHead({
 
       <div class="services-content__linkItextBox__content pr">
         <NuxtLink
-          to="lakas-textil"
+          to="/lakas-textil"
           class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
         >
           <NuxtImg
@@ -232,7 +202,7 @@ useHead({
 
       <div class="services-content__linkItextBox__content pr">
         <NuxtLink
-          to="menyasszonyi-ruha"
+          to="/menyasszonyi-ruha"
           class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
         >
           <NuxtImg
@@ -250,7 +220,7 @@ useHead({
 
       <div class="services-content__linkItextBox__content pr">
         <NuxtLink
-          to="szonyegtisztitas"
+          to="/szonyegtisztitas"
           class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
         >
           <NuxtImg
@@ -268,7 +238,7 @@ useHead({
 
       <div class="services-content__linkItextBox__content pr">
         <NuxtLink
-          to="fuggonytisztitas"
+          to="/fuggonytisztitas"
           class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
         >
           <NuxtImg
@@ -286,7 +256,7 @@ useHead({
 
       <div class="services-content__linkItextBox__content pr">
         <NuxtLink
-          to="varras"
+          to="/varras"
           class="services-content__linkItextBox__content__tBox__link text-transform-uppercase text-color-w f-700"
         >
           <NuxtImg
