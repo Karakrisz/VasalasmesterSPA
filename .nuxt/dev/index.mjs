@@ -2475,6 +2475,12 @@ const sources$1 = [
                 "loc": "/egyeni-igenyek"
             },
             {
+                "loc": "/ettermi-textil"
+            },
+            {
+                "loc": "/fuggonytisztitas"
+            },
+            {
                 "loc": "/galeria"
             },
             {
@@ -2488,6 +2494,12 @@ const sources$1 = [
             },
             {
                 "loc": "/kolcsonzes"
+            },
+            {
+                "loc": "/lakas-textil"
+            },
+            {
+                "loc": "/menyasszonyi-ruha"
             },
             {
                 "loc": "/meretre-szabas-igazitas"
@@ -2506,6 +2518,9 @@ const sources$1 = [
             },
             {
                 "loc": "/szolgaltatasok"
+            },
+            {
+                "loc": "/szonyegtisztitas"
             },
             {
                 "loc": "/tisztitas"

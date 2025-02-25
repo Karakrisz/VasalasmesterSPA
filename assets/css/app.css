@@ -877,6 +877,10 @@ ul {
   font-size: 1.3rem;
 }
 
+.blog-slug-content strong a {
+  color: #438af6;
+}
+
 .services-content__linkItextBox--p-0 {
   padding: 0;
 }
