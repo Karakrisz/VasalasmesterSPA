@@ -480,11 +480,12 @@ const latestPosts = itemsPost.value?.slice(-3) || []
       </div>
       <div class="blog-slug-content__psychologicalBox text-center">
         <p class="blog-slug-content__psychologicalBox__p">
-          <i class="blog-slug-content__psychologicalBox__i f-500"
-            >Már csak egy lépés választ el a tökéletes tisztaságtól és
-            frissességtől! <br />
-            Nyomd meg az alábbi gombot az igenhez!</i
-          >
+          <i class="blog-slug-content__psychologicalBox__i f-500">
+            Képzeld el azt a friss, tiszta érzést, amikor minden tökéletesen
+            rendben van!
+            <br />
+            Egyetlen kattintás, és mi gondoskodunk róla helyetted!
+          </i>
         </p>
       </div>
       <div class="blog-slug-content__linkBox text-center">
@@ -492,7 +493,7 @@ const latestPosts = itemsPost.value?.slice(-3) || []
           to="/ajanlatkeres"
           class="blog-slug-content__linkBox__link text-color-w f-700"
         >
-          IGEN, Én is megrendelem
+          Én is időpontot foglalok
         </NuxtLink>
       </div>
     </div>
