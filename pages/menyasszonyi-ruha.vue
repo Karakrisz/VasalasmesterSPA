@@ -102,7 +102,6 @@ useHead({
         >
       </p>
     </div>
-
     <div class="blog-slug-content__linkBox text-center">
       <NuxtLink
         to="/ajanlatkeres"
