@@ -368,7 +368,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "apiBaseUrl": "https://vasalasmester.hu/api/public"
+    "apiBaseUrl": "https://blog.vasalasmester.hu/api/public"
   },
   "sitemap": {
     "isI18nMapped": false,
