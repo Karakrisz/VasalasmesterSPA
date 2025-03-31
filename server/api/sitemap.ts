@@ -9,7 +9,7 @@ interface Post {
 export default defineSitemapEventHandler(async (e) => {
   try {
     const response = await fetch(
-      'https://vasalasmester.hu/api/public/json-posts'
+      'https://blog.vasalasmester.hu/api/public/json-posts'
     )
     if (!response.ok) {
       throw new Error('Failed to fetch posts')
